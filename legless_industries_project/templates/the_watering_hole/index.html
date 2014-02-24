@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% load static %} <!-- New line -->
+
+<html>
+
+    <head>
+        <title>The Watering Hole</title>
+    </head>
+
+    <body>
+       <p>
+       <h1>The Watering Hole...</h1>
+       take 1! <strong>{{ boldmessage }}</strong><br /></p>
+
+       <p>
+       <a href="/the_watering_hole/about/">About</a><br />
+       <img src="{% static "craig.jpg" %}" alt="Picture of Craig looking snazzeh" /> <!-- New line -->
+        </p>
+    </body>
+
+</html>
