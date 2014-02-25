@@ -1,23 +1,24 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
-class User(models.Model):
+class UserProfile(models.Model):
+    # This line is required. Links UserProfile to a User model instance.
+    user = models.OneToOneField(User)
 
-    #basic user account info
-    uID = models.CharField(max_length=128, unique=True)
-    password = models.CharField(max_length=10, unique=False)
-    birthdate = models.DateField(unique=False)
-    email = models.EmailField(max_length=75)
-    date_created = models.DateTimeField()
+    # The additional attributes we wish to include.
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
 
+    # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.uID
+        return self.user.username
 
 
 class Bar(models.Model):
     #link to owner's account
-    owner = models.ForeignKey(User)
+    owner = models.ForeignKey(UserProfile)
 
     #basic bar info
     name = models.CharField(max_length=128, unique=True)
@@ -30,7 +31,7 @@ class Bar(models.Model):
 
 class Review(models.Model):
     #link to user that posted review
-    poster = models.ForeignKey(User)
+    poster = models.ForeignKey(UserProfile)
 
     #ratings
     booze = models.IntegerField(default=0)
@@ -52,7 +53,7 @@ class Review(models.Model):
 
 
 class Comment(models.Model):
-    poster = models.ForeignKey(User)
+    poster = models.ForeignKey(UserProfile)
     text_comment = models.TextField()
     date_posted = models.DateTimeField()
     likes = models.IntegerField(default=0)
