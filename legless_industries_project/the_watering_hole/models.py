@@ -33,14 +33,17 @@ class Review(models.Model):
     #link to user that posted review
     poster = models.ForeignKey(UserProfile)
 
+    #link to the bar being reviewed
+    bar = models.ForeignKey(Bar)
+
     #ratings
     booze = models.IntegerField(default=0)
     beats = models.IntegerField(default=0)
-    bevy = models.IntegerField(default=0)
+    barstaff = models.IntegerField(default=0)
     bucks = models.IntegerField(default=0)
 
     #overall rating is average of all other ratings
-    overall = models.IntegerField(default= 0)
+    overall = models.IntegerField(default=0)
 
     #review details
     text_review = models.TextField()
@@ -53,7 +56,12 @@ class Review(models.Model):
 
 
 class Comment(models.Model):
+    #link to posting user
     poster = models.ForeignKey(UserProfile)
+
+    #link to review being commented on
+    review = models.ForeignKey(Review)
+
     text_comment = models.TextField()
     date_posted = models.DateTimeField()
     likes = models.IntegerField(default=0)
@@ -82,7 +90,7 @@ class Categories(models.Model):
     function_room = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return self.bar
+        return self.bar.name
 
 
 class News(models.Model):
@@ -93,12 +101,12 @@ class News(models.Model):
     news = models.TextField()
 
     def __unicode__(self):
-        return self.bar
+        return self.news
 
 
 class Photos(models.Model):
     bar = models.ForeignKey(Bar)
-    image = models.ImageField(upload_to = 'uploads')
+    image = models.ImageField(upload_to='uploads')
 
     def __unicode__(self):
-        return self.bar
+        return self.image

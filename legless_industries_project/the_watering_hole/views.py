@@ -2,7 +2,8 @@ from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
-def index(request):# Request the context of the request.
+
+def index(request): # Request the context of the request.
     # The context contains information such as the client's machine details, for example.
     context = RequestContext(request)
 
@@ -15,6 +16,7 @@ def index(request):# Request the context of the request.
     # Note that the first parameter is the template we wish to use.
     return render_to_response('the_watering_hole/index.html', context_dict, context)
 
+
 def about(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
@@ -23,6 +25,7 @@ def about(request):
 
 
 from the_watering_hole.forms import UserForm, UserProfileForm
+
 
 def register(request):
     # Like before, get the request's context.
@@ -80,6 +83,6 @@ def register(request):
 
     # Render the template depending on the context.
     return render_to_response(
-            'the_watering_hole/register.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
-            context)
+        'the_watering_hole/register.html',
+        {'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
+        context)
