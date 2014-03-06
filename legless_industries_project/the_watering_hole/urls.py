@@ -9,4 +9,5 @@ urlpatterns = patterns('',
                        url(r'^add_bar/$', views.add_bar, name='add_bar'),
                        url(r'^login/$', views.user_login, name='login'),
                        url(r'^logout/$', views.user_logout, name='logout'),
+                       url(r'^bar_page/(?P<bar_name_url>\w+)/$', views.bar_page, name='bar'),
                        )

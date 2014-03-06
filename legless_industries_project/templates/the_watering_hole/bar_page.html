@@ -1,0 +1,37 @@
+{% extends 'the_watering_hole/base.html' %}
+{% load static %} <!-- New line -->
+{% block title %}{{ name }}{% endblock %}
+
+{% block body_block %}
+
+<h2>{{ bar_name }}</h2>
+{% if bar %}
+        <img src="/uploads{{ photo.image }}"/><br>
+        Address: {{ bar.address }}<br><br>
+        Description: {{ bar.bio }}
+
+    {% if reviews %}
+
+            {% for review in reviews %}
+                <h4>Reviews</h4>
+                Posted by {{ review.poster }} on {{ review.date_posted }}<br><br>
+                {{ review.text_review }}<br><br>
+                {{ review.poster }}'s ratings:<br>
+                <h4>
+                <li>Booze: {{ review.booze }}</li>
+                <li>Beats: {{ review.beats }}</li>
+                <li>BarStaff: {{ review.barstaff }}</li>
+                <li>Bucks: {{ review.bucks }}</li>
+                </h4>
+                <h3><li>Overall score by {{ review.poster }}: {{ review.overall }}</li></h3>
+                {{ review.likes }} people have liked this review!
+            {% endfor %}
+
+        {% else %}
+            <strong>There are no reviews present for this bar.</strong>
+    {% endif %}
+    {% else %}
+        The specified bar {{ bar_name }} does not exist!
+    {% endif %}
+
+{% endblock %}

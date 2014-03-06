@@ -5,22 +5,64 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
 from the_watering_hole.forms import UserForm, UserProfileForm, BarForm
-from the_watering_hole.models import Bar
+from the_watering_hole.models import Bar, Review, Photo
 
 
 def index(request):  # Request the context of the request.
     # Obtain the context from the HTTP request.
     context = RequestContext(request)
 
-    # Query the database for a list of ALL categories currently stored.
-    # Order the categories by no. likes in descending order.
-    # Retrieve the top 5 only - or all if less than 5.
+    # Query the database for a list of ALL bars currently stored.
+    # Order the bars by name
     # Place the list in our context_dict dictionary which will be passed to the template engine.
     bar_list = Bar.objects.order_by('name')
     context_dict = {'Bars': bar_list}
 
     # Render the response and send it back!
     return render_to_response('the_watering_hole/index.html', context_dict, context)
+
+
+def bar_page(request, bar_name_url):
+     # Request our context from the request passed to us.
+    context = RequestContext(request)
+
+    # Change underscores in the category name to spaces.
+    # URLs don't handle spaces well, so we encode them as underscores.
+    # We can then simply replace the underscores with spaces again to get the name.
+    bar_name = bar_name_url.replace('_', ' ')
+
+     # Create a context dictionary which we can pass to the template rendering engine.
+    # We start by containing the name of the category passed by the user.
+    context_dict = {'bar_name': bar_name}
+
+    try:
+        # Can we find a category with the given name?
+        # If we can't, the .get() method raises a DoesNotExist exception.
+        # So the .get() method returns one model instance or raises an exception.
+        bar = Bar.objects.get(name=bar_name)
+
+        # Retrieve all of the associated reviews
+        # Note that filter returns >= 1 model instance.
+        reviews = Review.objects.filter(bar=bar)
+
+        #retrieve associated photo
+        photo = Photo.objects.get(bar=bar)
+
+        # Adds our results list to the template context under name pages.
+        context_dict['reviews'] = reviews
+        # We also add the bar object from the database to the context dictionary.
+        # We'll use this in the template to verify that the category exists.
+        context_dict['bar'] = bar
+        #also add photo object
+        context_dict['photo'] = photo
+
+    except Bar.DoesNotExist:
+        # We get here if we didn't find the specified bar.
+        # Don't do anything - the template displays the "no bar" message for us.
+        pass
+
+    # Render the response and send it back!
+    return render_to_response('the_watering_hole/bar_page.html', context_dict, context)
 
 
 def about(request):
