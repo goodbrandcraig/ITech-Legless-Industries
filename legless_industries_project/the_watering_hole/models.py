@@ -14,7 +14,7 @@ class UserProfile(models.Model):
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.name
+        return self.website
 
 
 class Bar(models.Model):

@@ -6,7 +6,13 @@ from datetime import datetime
 def populate():
     john = add_user('john', 'john@john.com', 'johnpassword')
 
+    john_profile = add_user_profile(john, 'www.john.com',
+                                    '/media/profile_images/988341_10201581831484988_1056121486_n.jpg')
+
     chris = add_user('chris', 'chris@chris.com', 'chrispassword')
+
+    chris_profile = add_user_profile(chris, 'www.chrischris.com',
+                                     '/media/profile_images/988609_543226820336_2091969694_n.jpg')
 
     garage_bar = add_bar(john, 'The Garage', '490 Sauchiehall St', 'The Garage is a music venue and nightclub located '
                                                                    'at 490 Sauchiehall Street in Glasgow which opened '
@@ -35,6 +41,12 @@ def add_user(name, email, password):
     u = User.objects.get_or_create(username=name, email=email, password=password)
     print 'adding user: ' + name
     return u[0]
+
+
+def add_user_profile(user, website, picture):
+    p = UserProfile.objects.get_or_create(user=user, website=website, picture=picture)
+    print 'adding profile for: ' + str(user)
+    return p[0]
 
 
 def add_bar(owner, name, address, bio):
@@ -87,7 +99,7 @@ def add_photo(bar, name, image):
 if __name__ == '__main__':
     print "Starting Watering Hole population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'legless_industries_project.settings')
-    from the_watering_hole.models import User,  Bar, Review, Comment, Category, Event, Photo
+    from the_watering_hole.models import User, UserProfile, Bar, Review, Comment, Category, Event, Photo
     populate()
 
 #d.maxwell.1@research.gla.ac.uk
