@@ -1,19 +1,25 @@
-from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+
+from the_watering_hole.forms import UserForm, UserProfileForm, BarForm
+from the_watering_hole.models import Bar
 
 
-def index(request): # Request the context of the request.
-    # The context contains information such as the client's machine details, for example.
+def index(request):  # Request the context of the request.
+    # Obtain the context from the HTTP request.
     context = RequestContext(request)
 
-    # Construct a dictionary to pass to the template engine as its context.
-    # Note the key boldmessage is the same as {{ boldmessage }} in the template!
-    context_dict = {'boldmessage': "I am bold font from the context"}
+    # Query the database for a list of ALL categories currently stored.
+    # Order the categories by no. likes in descending order.
+    # Retrieve the top 5 only - or all if less than 5.
+    # Place the list in our context_dict dictionary which will be passed to the template engine.
+    bar_list = Bar.objects.order_by('name')
+    context_dict = {'Bars': bar_list}
 
-    # Return a rendered response to send to the client.
-    # We make use of the shortcut function to make our lives easier.
-    # Note that the first parameter is the template we wish to use.
+    # Render the response and send it back!
     return render_to_response('the_watering_hole/index.html', context_dict, context)
 
 
@@ -22,9 +28,6 @@ def about(request):
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
     return render_to_response('the_watering_hole/about.html')
-
-
-from the_watering_hole.forms import UserForm, UserProfileForm
 
 
 def register(request):
@@ -86,3 +89,87 @@ def register(request):
         'the_watering_hole/register.html',
         {'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
         context)
+
+
+def user_login(request):
+    # Like before, obtain the context for the user's request.
+    context = RequestContext(request)
+
+    # If the request is a HTTP POST, try to pull out the relevant information.
+    if request.method == 'POST':
+        # Gather the username and password provided by the user.
+        # This information is obtained from the login form.
+        username = request.POST['username']
+        password = request.POST['password']
+
+        # Use Django's machinery to attempt to see if the username/password
+        # combination is valid - a User object is returned if it is.
+        user = authenticate(username=username, password=password)
+
+        # If we have a User object, the details are correct.
+        # If None (Python's way of representing the absence of a value), no user
+        # with matching credentials was found.
+        if user is not None:
+            # Is the account active? It could have been disabled.
+            if user.is_active:
+                # If the account is valid and active, we can log the user in.
+                # We'll send the user back to the homepage.
+                login(request, user)
+                return HttpResponseRedirect('/the_watering_hole/')
+            else:
+                # An inactive account was used - no logging in!
+                return HttpResponse("Your Watering Hole account is disabled.")
+        else:
+            # Bad login details were provided. So we can't log the user in.
+            print "Invalid login details: {0}, {1}".format(username, password)
+            return HttpResponse("Invalid login details supplied.")
+
+    # The request is not a HTTP POST, so display the login form.
+    # This scenario would most likely be a HTTP GET.
+    else:
+        # No context variables to pass to the template system, hence the
+        # blank dictionary object...
+        return render_to_response('the_watering_hole/login.html', {}, context)
+
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required
+def user_logout(request):
+    # Since we know the user is logged in, we can now just log them out.
+    logout(request)
+
+    # Take the user back to the homepage.
+    return HttpResponseRedirect('/the_watering_hole/')
+
+
+def add_bar(request):
+    #check user is logged in before allowing them to add a bar
+    if request.user.is_authenticated():
+        # Get the context from the request.
+        context = RequestContext(request)
+
+        # A HTTP POST?
+        if request.method == 'POST':
+            form = BarForm(request.POST)
+
+             # Have we been provided with a valid form?
+            if form.is_valid():
+                # Save the new category to the database.
+                form.save(commit=True)
+
+                # Now call the index() view.
+                # The user will be shown the homepage.
+                return index(request)
+            else:
+                # The supplied form contained errors - just print them to the terminal.
+                print form.errors
+        else:
+            # If the request was not a POST, display the form to enter details.
+            form = BarForm()
+
+        # Bad form (or form details), no form supplied...
+        # Render the form with error messages (if any).
+        return render_to_response('the_watering_hole/add_bar.html', {'form': form}, context)
+
+    else:
+        return HttpResponse("You are not logged in.")

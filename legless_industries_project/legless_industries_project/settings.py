@@ -9,6 +9,7 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 
 DATABASE_PATH = os.path.join(PROJECT_PATH, 'watering_hole.db')
 
+LOGIN_URL = '/the_watering_hole/login/'
 
 
 DEBUG = True

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Watering Hole - {% block title %}Quenching the thirst of the urban savannah!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+        {% block body_block %}{% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+                 {% if user.is_authenticated %}
+                    <li><a href="/the_watering_hole/add_bar/">Add a New Bar</a></li>
+                    <li><a href="/the_watering_hole/logout/">Logout</a><br /></li>
+                 {% else %}
+                    <li><a href="/the_watering_hole/register/">Register Here</a><br /></li>
+                    <li><a href="/the_watering_hole/login/">Login</a><br /></li>
+                 {% endif %}
+
+                    <li><a href="/the_watering_hole/about/">About</a><br /></li>
+            </ul>
+        </div>
+    </body>
+</html>

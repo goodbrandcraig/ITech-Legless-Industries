@@ -1,16 +1,13 @@
+{% extends 'the_watering_hole/base.html' %}
 {% load static %} <!-- New line -->
 
-<html>
+{% block title %}About{% endblock %}
 
-    <head>
-        <title>Your Bar</title>
-    </head>
-
-    <body>
-        <h1>This will be the page for a bar</h1>
-        With a description etc<strong>{{ boldmessage }}</strong><br />
-        <a href="/the_watering_hole/">Home</a><br />
-        <img src="{% static "shibe.jpg" %}" alt="Picture of Doge" /> <!-- New line -->
-    </body>
-
-</html>
+{% block body_block %}
+    <h1>About The Watering Hole</h1>
+    The Watering Hole is a site designed to find the best possible source of liquid refreshment for you!
+    <br>
+    <br><a href="/the_watering_hole/">Home</a>
+    <br>
+    <br><img src="{% static "shibe.jpg" %}" alt="Picture of Doge" /> <!-- New line -->
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'the_watering_hole/base.html' %}
+
+{% block title %}login{% endblock %}
+{% block body_block %}
+        <h1>Login to The Watering Hole</h1>
+
+        <form id="login_form" method="post" action="/the_watering_hole/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+{% endblock %}
