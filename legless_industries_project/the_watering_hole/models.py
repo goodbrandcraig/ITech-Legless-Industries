@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
@@ -13,12 +14,12 @@ class UserProfile(models.Model):
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.user.username
+        return self.name
 
 
 class Bar(models.Model):
     #link to owner's account
-    owner = models.ForeignKey(UserProfile)
+    owner = models.ForeignKey(User)
 
     #basic bar info
     name = models.CharField(max_length=128, unique=True)
@@ -31,7 +32,7 @@ class Bar(models.Model):
 
 class Review(models.Model):
     #link to user that posted review
-    poster = models.ForeignKey(UserProfile)
+    poster = models.ForeignKey(User)
 
     #link to the bar being reviewed
     bar = models.ForeignKey(Bar)
@@ -57,7 +58,7 @@ class Review(models.Model):
 
 class Comment(models.Model):
     #link to posting user
-    poster = models.ForeignKey(UserProfile)
+    poster = models.ForeignKey(User)
 
     #link to review being commented on
     review = models.ForeignKey(Review)
@@ -70,7 +71,7 @@ class Comment(models.Model):
         return self.text_comment
 
 
-class Categories(models.Model):
+class Category(models.Model):
     #link to bar
     bar = models.ForeignKey(Bar)
 
@@ -93,7 +94,7 @@ class Categories(models.Model):
         return self.bar.name
 
 
-class News(models.Model):
+class Event(models.Model):
     #link to bar
     bar = models.ForeignKey(Bar)
 
@@ -104,9 +105,10 @@ class News(models.Model):
         return self.news
 
 
-class Photos(models.Model):
+class Photo(models.Model):
     bar = models.ForeignKey(Bar)
+    name = models.CharField(max_length=128)
     image = models.ImageField(upload_to='uploads')
 
     def __unicode__(self):
-        return self.image
+        return self.name
