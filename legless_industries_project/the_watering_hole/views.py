@@ -26,7 +26,7 @@ def bar_page(request, bar_name_url):
      # Request our context from the request passed to us.
     context = RequestContext(request)
 
-    # Change underscores in the category name to spaces.
+    # Change underscores in the bar name to spaces.
     # URLs don't handle spaces well, so we encode them as underscores.
     # We can then simply replace the underscores with spaces again to get the name.
     bar_name = bar_name_url.replace('_', ' ')
@@ -36,7 +36,7 @@ def bar_page(request, bar_name_url):
     context_dict = {'bar_name': bar_name}
 
     try:
-        # Can we find a category with the given name?
+        # Can we find a bar with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
         # So the .get() method returns one model instance or raises an exception.
         bar = Bar.objects.get(name=bar_name)

@@ -27,7 +27,7 @@ class Bar(models.Model):
     bio = models.TextField()
 
     def __unicode__(self):
-        return self.name
+        return self.name.replace(' ', '_')
 
 
 class Review(models.Model):
