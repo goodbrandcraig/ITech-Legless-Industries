@@ -8,8 +8,8 @@
 
     {% if Bars %}
             <ul>
-                {% for name in Bars %}
-                <li><a href="/the_watering_hole/bar_page/{{ name.get_bar_url }}" >{{ name.name }}</a></li>
+                {% for Bars in Bars %}
+                <li><a href="/the_watering_hole/bar_page/{{ Bars.get_bar_url }}" >{{ Bars.name }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}

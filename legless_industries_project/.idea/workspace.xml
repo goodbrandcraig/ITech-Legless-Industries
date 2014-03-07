@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="manage.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="manage.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
+            <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.17" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/the_watering_hole/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="12" selection-start="973" selection-end="973" vertical-scroll-proportion="0.58938247" vertical-offset="0" max-vertical-offset="2091">
+            <state line="102" column="16" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="2074">
               <folding />
             </state>
           </provider>
@@ -44,34 +44,7 @@
       <file leaf-file-name="bar_page.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/bar_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="611" selection-end="611" vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="52" selection-start="566" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="561">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="populate_watering_hole.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/populate_watering_hole.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1853">
+            <state line="22" column="46" selection-start="767" selection-end="767" vertical-scroll-proportion="-14.96" vertical-offset="0" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -80,17 +53,10 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="35" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="93" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
+            <state line="108" column="38" selection-start="4612" selection-end="4612" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="4250">
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +64,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="68" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="459">
+            <state line="11" column="64" selection-start="335" selection-end="335" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
@@ -107,7 +73,18 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/the_watering_hole/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="43" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="646">
+            <state line="32" column="18" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <folding>
+                <element signature="e#22#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="populate_watering_hole.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/populate_watering_hole.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
               <folding />
             </state>
           </provider>
@@ -129,17 +106,17 @@
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/legless_industries_project/settings.py" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/base.html" />
-        <option value="$PROJECT_DIR$/templates/the_watering_hole/add_bar.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/login.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/about.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/register.html" />
-        <option value="$PROJECT_DIR$/the_watering_hole/forms.py" />
         <option value="$PROJECT_DIR$/the_watering_hole/urls.py" />
-        <option value="$PROJECT_DIR$/populate_watering_hole.py" />
+        <option value="$PROJECT_DIR$/templates/the_watering_hole/add_bar.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/bar_page.html" />
-        <option value="$PROJECT_DIR$/the_watering_hole/views.py" />
-        <option value="$PROJECT_DIR$/the_watering_hole/models.py" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/index.html" />
+        <option value="$PROJECT_DIR$/the_watering_hole/models.py" />
+        <option value="$PROJECT_DIR$/the_watering_hole/forms.py" />
+        <option value="$PROJECT_DIR$/the_watering_hole/views.py" />
+        <option value="$PROJECT_DIR$/populate_watering_hole.py" />
       </list>
     </option>
   </component>
@@ -175,6 +152,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,7 +283,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,7 +387,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="legless_industries_project" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -436,27 +433,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="legless_industries_project" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -544,9 +521,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24231333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27083334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19542067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -554,19 +532,18 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -575,10 +552,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24231333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27083334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40702212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -598,13 +575,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="65" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
@@ -637,7 +607,9 @@
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="55" selection-start="3199" selection-end="3199" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1598">
-          <folding />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -701,7 +673,9 @@
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="60" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="476">
-          <folding />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -758,7 +732,9 @@
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="60" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="476">
-          <folding />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,20 +794,6 @@
         <state line="11" column="26" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="14" selection-start="991" selection-end="991" vertical-scroll-proportion="-18.36" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/add_bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="485" selection-end="485" vertical-scroll-proportion="0.30289534" vertical-offset="0" max-vertical-offset="898">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/legless_industries_project/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="0" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
@@ -853,41 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="43" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="52" selection-start="566" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populate_watering_hole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="93" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
@@ -895,30 +822,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="35" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
+        <state line="19" column="52" selection-start="566" selection-end="594" vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="561">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="542" selection-end="542" vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="986" selection-end="986" vertical-scroll-proportion="-18.36" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/add_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="300" selection-end="300" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populate_watering_hole.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/the_watering_hole/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="18" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding>
+            <element signature="e#22#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="68" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="459">
+        <state line="11" column="64" selection-start="335" selection-end="335" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="459">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="38" selection-start="4612" selection-end="4612" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="4250">
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/bar_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="611" selection-end="611" vertical-scroll-proportion="-12.92" vertical-offset="0" max-vertical-offset="731">
+        <state line="22" column="46" selection-start="767" selection-end="767" vertical-scroll-proportion="-14.96" vertical-offset="0" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/the_watering_hole/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="12" selection-start="973" selection-end="973" vertical-scroll-proportion="0.58938247" vertical-offset="0" max-vertical-offset="2091">
+        <state line="102" column="16" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="2074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.17" vertical-offset="0" max-vertical-offset="900">
           <folding />
         </state>
       </provider>

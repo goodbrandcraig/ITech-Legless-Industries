@@ -26,7 +26,7 @@ def populate():
     garage_categories = add_category(garage_bar, True, True, False, False, True, True, True, False, False, False,
                                      True, True, False)
 
-    garage_photo = add_photo(garage_bar, 'garage main room', '/media/garage.jpg')
+    garage_photo = add_photo(garage_bar, '/uploads/garage.jpg')
 
     garage_news = add_event(garage_bar, 'Monday Nights bring you: 3 Rooms / 2 DJs / And YOU! G2: Andy R hosts Space'
                                         ' Invader and brings the widest selection of musical genres to the Garage each '
@@ -91,9 +91,9 @@ def add_event(bar, events, news):
     return e[0]
 
 
-def add_photo(bar, name, image):
-    p = Photo.objects.get_or_create(bar=bar, name=name,image=image)
-    print 'adding photo: ' + name
+def add_photo(bar, image):
+    p = Photo.objects.get_or_create(bar=bar, image=image)
+    print 'adding photo: ' + bar.name
     return p[0]
 
 if __name__ == '__main__':

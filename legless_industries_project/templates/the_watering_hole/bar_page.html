@@ -6,9 +6,9 @@
 
 <h2>{{ bar_name }}</h2>
 {% if bar %}
-        <img src="/uploads{{ photo.image }}"/><br>
+        <img src="/media/{{ photo.image }}"/><br>
         Address: {{ bar.address }}<br><br>
-        Description: {{ bar.bio }}
+        Description: {{ bar.bio }}<br><br>
 
     {% if reviews %}
 

@@ -112,8 +112,7 @@ class Event(models.Model):
 
 class Photo(models.Model):
     bar = models.ForeignKey(Bar)
-    name = models.CharField(max_length=128)
     image = models.ImageField(upload_to='uploads')
 
     def __unicode__(self):
-        return self.name
+        return self

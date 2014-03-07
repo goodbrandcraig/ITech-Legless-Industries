@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from the_watering_hole.forms import UserForm, UserProfileForm, BarForm
+from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm
 from the_watering_hole.models import Bar, Review, Photo
 
 
@@ -190,28 +190,55 @@ def add_bar(request):
         # Get the context from the request.
         context = RequestContext(request)
 
+        # A boolean value for telling the template whether the creation was successful.
+        # Set to False initially. Code changes value to True when creation succeeds.
+        created = False
+
         # A HTTP POST?
         if request.method == 'POST':
-            form = BarForm(request.POST)
+            bar_form = BarForm(request.POST)
+            image_form = ImageForm(request.POST, request.FILES)
 
              # Have we been provided with a valid form?
-            if form.is_valid():
+            if bar_form.is_valid():
                 # Save the new category to the database.
-                form.save(commit=True)
+                bar = bar_form.save(commit=False)
+                bar.owner = request.user
+                bar = bar_form.save()
+
+                 # Now sort out the photo instance.
+                # Since we need to set the bar attribute ourselves, we set commit=False.
+                # This delays saving the model until we're ready to avoid integrity problems.
+                photo = image_form.save(commit=False)
+                photo.bar = bar
+
+                # Did the user provide a profile picture?
+                # If so, we need to get it from the input form and put it in the UserProfile model.
+                if 'picture' in request.FILES:
+                    photo.image = request.FILES['picture']
+
+                # Now we save the UserProfile model instance.
+                photo.save()
+
+                # Update our variable to tell the template registration was successful.
+                created = True
 
                 # Now call the index() view.
                 # The user will be shown the homepage.
                 return index(request)
+
             else:
                 # The supplied form contained errors - just print them to the terminal.
-                print form.errors
+                print bar_form.errors, image_form.errors
         else:
             # If the request was not a POST, display the form to enter details.
-            form = BarForm()
+            bar_form = BarForm()
+            image_form = ImageForm()
 
-        # Bad form (or form details), no form supplied...
-        # Render the form with error messages (if any).
-        return render_to_response('the_watering_hole/add_bar.html', {'form': form}, context)
+            # Bad form (or form details), no form supplied...
+            # Render the form with error messages (if any).
+            return render_to_response('the_watering_hole/add_bar.html', {'bar_form': bar_form, 'image_form': image_form,
+                                                                         'created': created}, context)
 
     else:
         return HttpResponse("You are not logged in.")
