@@ -27,6 +27,11 @@ class Bar(models.Model):
     bio = models.TextField()
 
     def __unicode__(self):
+        return self.name
+
+    #method to return bar name with underscores instead of spaces
+    #so that the URL works properly
+    def get_bar_url(self):
         return self.name.replace(' ', '_')
 
 
