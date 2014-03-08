@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm
-from the_watering_hole.models import Bar, Review, Photo
+from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm, CategoryForm
+from the_watering_hole.models import Bar, Review, Photo, Category
 
 
 def index(request):  # Request the context of the request.
@@ -48,13 +48,18 @@ def bar_page(request, bar_name_url):
         #retrieve associated photo
         photo = Photo.objects.get(bar=bar)
 
+        #retrieve categories
+        categories = Category.objects.get(bar=bar)
+
         # Adds our results list to the template context under name pages.
         context_dict['reviews'] = reviews
         # We also add the bar object from the database to the context dictionary.
         # We'll use this in the template to verify that the category exists.
         context_dict['bar'] = bar
-        #also add photo object
+        # also add photo object
         context_dict['photo'] = photo
+        # and category object
+        context_dict['categories'] = categories
 
     except Bar.DoesNotExist:
         # We get here if we didn't find the specified bar.
@@ -198,6 +203,7 @@ def add_bar(request):
         if request.method == 'POST':
             bar_form = BarForm(request.POST)
             image_form = ImageForm(request.POST, request.FILES)
+            category_form = CategoryForm(request.POST)
 
              # Have we been provided with a valid form?
             if bar_form.is_valid():
@@ -206,19 +212,26 @@ def add_bar(request):
                 bar.owner = request.user
                 bar = bar_form.save()
 
-                 # Now sort out the photo instance.
+                # Now sort out the photo instance.
                 # Since we need to set the bar attribute ourselves, we set commit=False.
                 # This delays saving the model until we're ready to avoid integrity problems.
                 photo = image_form.save(commit=False)
                 photo.bar = bar
 
-                # Did the user provide a profile picture?
-                # If so, we need to get it from the input form and put it in the UserProfile model.
+                # And now the categories instance
+                category = category_form.save(commit=False)
+                category.bar = bar
+
+                # Did the user provide a bar picture?
+                # If so, we need to get it from the input form and put it in the photo model.
                 if 'picture' in request.FILES:
                     photo.image = request.FILES['picture']
 
-                # Now we save the UserProfile model instance.
+                # Now we save the photo model instance.
                 photo.save()
+
+                #and the Category instance
+                category.save()
 
                 # Update our variable to tell the template registration was successful.
                 created = True
@@ -229,15 +242,17 @@ def add_bar(request):
 
             else:
                 # The supplied form contained errors - just print them to the terminal.
-                print bar_form.errors, image_form.errors
+                print bar_form.errors, image_form.errors, category_form.errors
         else:
             # If the request was not a POST, display the form to enter details.
             bar_form = BarForm()
             image_form = ImageForm()
+            category_form = CategoryForm()
 
             # Bad form (or form details), no form supplied...
             # Render the form with error messages (if any).
             return render_to_response('the_watering_hole/add_bar.html', {'bar_form': bar_form, 'image_form': image_form,
+                                                                         'category_form': category_form,
                                                                          'created': created}, context)
 
     else:
