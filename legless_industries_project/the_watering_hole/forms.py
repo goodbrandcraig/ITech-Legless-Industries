@@ -1,7 +1,7 @@
 __author__ = 'Craig'
 
 from django import forms
-from the_watering_hole.models import UserProfile, Bar, Photo, Category
+from the_watering_hole.models import UserProfile, Bar, Photo, Category, Review
 from django.contrib.auth.models import User
 
 
@@ -24,6 +24,12 @@ class BarForm(forms.ModelForm):
         #Provide an association between the ModelForm and a model
         model = Bar
         fields = ('name', 'address', 'bio',)
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('booze', 'beats', 'barstaff', 'bucks', 'text_review')
 
 
 class ImageForm(forms.ModelForm):

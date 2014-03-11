@@ -4,8 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm, CategoryForm
-from the_watering_hole.models import Bar, Review, Photo, Category
+import datetime
+now = datetime.datetime.now() #for getting current datetime
+
+from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm, CategoryForm, ReviewForm
+from the_watering_hole.models import Bar, Review, Photo, Category, UserProfile, User
 
 
 def index(request):  # Request the context of the request.
@@ -31,8 +34,8 @@ def bar_page(request, bar_name_url):
     # We can then simply replace the underscores with spaces again to get the name.
     bar_name = bar_name_url.replace('_', ' ')
 
-     # Create a context dictionary which we can pass to the template rendering engine.
-    # We start by containing the name of the category passed by the user.
+    # Create a context dictionary which we can pass to the template rendering engine.
+    # We start by containing the name of the bar passed by the user.
     context_dict = {'bar_name': bar_name}
 
     try:
@@ -68,6 +71,35 @@ def bar_page(request, bar_name_url):
 
     # Render the response and send it back!
     return render_to_response('the_watering_hole/bar_page.html', context_dict, context)
+
+
+def profile_page(request, username):
+    # Get the context from the request.
+    context = RequestContext(request)
+
+    user_name = request.user
+
+    user = User.objects.get(username=user_name)
+
+    user_profile = UserProfile.objects.get(user=user_name)
+
+     # Create a context dictionary which we can pass to the template rendering engine.
+    # We start by containing the name of the bar passed by the user.
+    context_dict = {'user_name': user_name}
+
+    context_dict['user_profile'] = user_profile
+
+    try:
+        user_bars = Bar.objects.filter(owner=user)
+
+        context_dict['user bars'] = user_bars
+
+    except Bar.DoesNotExist:
+        # We get here if we didn't find the specified bar.
+        # Don't do anything - the template displays the "no bar" message for us.
+        pass
+
+    return render_to_response('the_watering_hole/profile.html', context_dict, context)
 
 
 def about(request):
@@ -233,7 +265,7 @@ def add_bar(request):
                 #and the Category instance
                 category.save()
 
-                # Update our variable to tell the template registration was successful.
+                # Update our variable to tell the template creation was successful.
                 created = True
 
                 # Now call the index() view.
@@ -257,3 +289,61 @@ def add_bar(request):
 
     else:
         return HttpResponse("You are not logged in.")
+
+
+def add_review(request, bar_name_url):
+     #check user is logged in before allowing them to add a bar
+    if request.user.is_authenticated():
+        # Get the context from the request.
+        context = RequestContext(request)
+
+        bar_name = bar_name_url.replace('_', ' ')
+
+        bar = Bar.objects.get(name=bar_name)
+
+        bar_name_url_slash = bar_name_url +'/'
+
+        context_dict = {'bar_name': bar_name}
+        context_dict['bar_name'] = bar_name
+        context_dict['bar_name_url_slash'] = bar_name_url_slash
+
+        # A boolean value for telling the template whether the creation was successful.
+        # Set to False initially. Code changes value to True when creation succeeds.
+        created = False
+
+        # A HTTP POST?
+        if request.method == 'POST':
+            review_form = ReviewForm(request.POST)
+
+             # Have we been provided with a valid form?
+            if review_form.is_valid():
+                # Save the new review to the database.
+                review = review_form.save(commit=False)
+                review.poster = request.user
+                review.date_posted = now.strftime("%Y-%m-%d %H:%M")
+                review.overall = (review.barstaff+review.beats+review.booze+review.bucks)/4
+                review.bar = bar
+
+                review = review_form.save()
+
+                # Update our variable to tell the template review was successful.
+                created = True
+
+            # Now call the bar_page() view.
+                # The user will be shown the bar page again with the new review.
+                return bar_page(request, bar_name_url)
+
+            else:
+                # The supplied form contained errors - just print them to the terminal.
+                print review_form.errors
+
+        else:
+            # If the request was not a POST, display the form to enter details.
+            review_form = ReviewForm()
+
+            # Bad form (or form details), no form supplied...
+            # Render the form with error messages (if any).
+            return render_to_response('the_watering_hole/review_bar.html', {'review_form': review_form,
+                                                                            'created': created,
+                                                                            'context_dict': context_dict}, context)
+

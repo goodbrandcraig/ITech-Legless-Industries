@@ -6,9 +6,11 @@
 
 <h2>{{ bar_name }}</h2>
 {% if bar %}
-        <img src="/media/{{ photo.image }}"/><br>
-        <h4>Address: {{ bar.address }}<br><br>
+       <img src="/media/{{ photo.image }}"/><br>
+       <h4> Owner: {{ bar.owner }}<br><br>
+        Address: {{ bar.address }}<br><br>
         Description: {{ bar.bio }}<br><br></h4>
+
 
         <h3> What does {{ bar_name }} have to offer?</h3>
 
@@ -22,34 +24,34 @@
         Real Ale<br>
     {% endif %}
     {% if categories.beer_garden %}
-         Beer Garden<br>
+        Beer Garden<br>
     {% endif %}
     {% if categories.whisky_collection %}
-         Whisky Collection<br>
+        Whisky Collection<br>
     {% endif %}
     {% if categories.children_welcome %}
-         Children Welcome<br>
+        Children Welcome<br>
     {% endif %}
     {% if categories.pets_welcome %}
-         Pets Welcome<br>
+        Pets Welcome<br>
     {% endif %}
     {% if categories.dartboard %}
-         Dartboard<br>
+        Dartboard<br>
     {% endif %}
     {% if categories.pool_tables %}
-         Pool Tables<br>
+        Pool Tables<br>
     {% endif %}
     {% if categories.games_machines %}
-         Games Machines<br>
+        Games Machines<br>
     {% endif %}
     {% if categories.historic %}
-         Historic Bar<br>
+        Historic Bar<br>
     {% endif %}
     {% if categories.wi_fi %}
-         Free Wi-Fi<br>
+        Free Wi-Fi<br>
     {% endif %}
     {% if categories.function_room %}
-         Function Room<br>
+        Function Room<br>
     {% endif %}
 
 
@@ -75,6 +77,9 @@
         {% else %}
             <strong>There are no reviews present for this bar.</strong>
     {% endif %}
+
+   <a href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a>
+
     {% else %}
         The specified bar {{ bar_name }} does not exist!
     {% endif %}
