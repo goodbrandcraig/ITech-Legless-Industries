@@ -3,15 +3,22 @@
 {% block title %}{{ name }}{% endblock %}
 
 {% block body_block %}
+<div class="hero-unit">
 
-<h2>{{ bar_name }}</h2>
-{% if bar %}
-       <img src="/media/{{ photo.image }}"/><br>
-       <h4> Owner: {{ bar.owner }}<br><br>
-        Address: {{ bar.address }}<br><br>
-        Description: {{ bar.bio }}<br><br></h4>
+    <div>
+    <h2>{{ bar_name }}</h2>
+    {% if bar %}
+         <span4>
+            <img src="/media/{{ photo.image }}"/><br>
+        </span4>
+        <span4>
+            <h4> Owner: {{ bar.owner }}<br><br>
+            Address: {{ bar.address }}<br><br>
+            Description: {{ bar.bio }}<br><br></h4>
+        </span4>
+    </div>
 
-
+</div>
         <h3> What does {{ bar_name }} have to offer?</h3>
 
     {% if categories.food %}
@@ -57,19 +64,21 @@
 
     {% if reviews %}
 
+            <h3>Reviews</h3>
             {% for review in reviews %}
-                <h3>Reviews</h3>
+            <div class="review">
                 Posted by <b>{{ review.poster }}</b> on {{ review.date_posted }}<br><br>
                 {{ review.text_review }}<br><br>
                 <b>{{ review.poster }}</b>'s ratings:<br>
-                <h4>
+                <p>
                 <li>Booze: {{ review.booze }}</li>
                 <li>Beats: {{ review.beats }}</li>
                 <li>BarStaff: {{ review.barstaff }}</li>
                 <li>Bucks: {{ review.bucks }}</li>
-                </h4>
+                </p>
                 <h3><li>Overall score by {{ review.poster }}: {{ review.overall }}</li></h3>
                 {{ review.likes }} people have liked this review!
+            </div>
             {% endfor %}
 
 
@@ -83,5 +92,6 @@
     {% else %}
         The specified bar {{ bar_name }} does not exist!
     {% endif %}
+
 
 {% endblock %}

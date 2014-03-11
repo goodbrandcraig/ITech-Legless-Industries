@@ -2,6 +2,7 @@
 {% block title %}Review{% endblock %}
 
 {% block body_block %}
+<div class="hero-unit">
 
     <form id="review_form" method="post" action="/the_watering_hole/review_bar/{{ context_dict.bar_name_url_slash }}">
 
@@ -15,4 +16,5 @@
 
 
     test {{ context_dict.bar_name_url }}
+</div>
 {% endblock %}

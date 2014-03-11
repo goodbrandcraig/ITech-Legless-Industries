@@ -1,20 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Watering Hole - {% block title %}Quenching the thirst of the urban savannah!{% endblock %}</title>
+        <meta name="viewport" content="width=device.width, initial-scale=1.0">
+        <!--Bootstrap -->
+        <link href="{% static 'css/bootstrap-fluid.adj.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap15.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+        <title>The Watering Hole - {% block title %}Quenching the thirst of the urban savannah{% endblock %}</title>
     </head>
 
     <body>
-        <div>
-        {% block body_block %}{% endblock %}
-        </div>
 
-        <hr />
+        <!-- Navigation Bar -->
 
-        <div>
-            <ul>
+<div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar-inner">
+       <div class="container">
+           <img class="logo" src="/static/giraffe.png" height="70px" width="70px"/>
+           <a class="brand" href="/the_watering_hole/">The Watering Hole</a>
+
+           <div class="nav-collapse collapse">
+               <ul class="nav pull-right">
                  {% if user.is_authenticated %}
-                    <li><a href="/the_watering_hole/add_bar/">Add a New Bar</a></li>
+                    <li display="inline"><a href="/the_watering_hole/add_bar/">Add a New Bar</a></li>
                     <li><a href="/the_watering_hole/logout/">Logout</a><br></li>
                     <li><a href="/the_watering_hole/profile_page/{{ user.username }}"/>Your Profile</a><br></li>
                  {% else %}
@@ -23,8 +33,47 @@
                  {% endif %}
 
                     <li><a href="/the_watering_hole/about/">About</a><br /></li>
-                    <li><a href="/the_watering_hole/">Home</a></li>
-            </ul>
+               </ul>
+           </div>
+           <!--/.nav-collapse -->
+       </div>
+   </div>
+</div>
+
+
+        <!-- Side bar + main window -->
+<div class="container-fluid">
+    <br/>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                {% for Bars in Bars %}
+                <li><a href="/the_watering_hole/bar_page/{{ Bars.get_bar_url }}" >{{ Bars.name }}</a></li>
+                {% endfor %}
+            </div>
+            <div class="well sidebar-nav">
+                <!-- Second sidebar if we have something to put in it, otherwise scrap this div -->
+            </div>
+            <!--/.well -->
         </div>
+        <!--/span-->
+        <div class="span9">
+        {% block body_block %}
+        {% endblock %}
+        </div>
+        <!-- /span -->
+    </div>
+    <!-- /row -->
+</div>
+<!-- Fluid container -->
+
+        <hr />
+
+    <footer>
+        <div class="container">
+            <p>&copy; Legless Industries 2013. Always be vigilant of cougars.</p>
+        </div>
+        <script src="{% static 'js/jquery-2.1.0.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </body>
 </html>
