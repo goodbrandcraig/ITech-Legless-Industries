@@ -1,0 +1,97 @@
+{% extends 'the_watering_hole/base.html' %}
+{% load static %} <!-- New line -->
+{% block title %}{{ name }}{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+
+    <div>
+    <h2>{{ bar_name }}</h2>
+    {% if bar %}
+         <span4>
+            <img src="/media/{{ photo.image }}"/><br>
+        </span4>
+        <span4>
+            <h4> Owner: {{ bar.owner }}<br><br>
+            Address: {{ bar.address }}<br><br>
+            Description: {{ bar.bio }}<br><br></h4>
+        </span4>
+    </div>
+
+</div>
+        <h3> What does {{ bar_name }} have to offer?</h3>
+
+    {% if categories.food %}
+        Food<br>
+    {% endif %}
+    {% if categories.big_screen %}
+        Big Screen<br>
+    {% endif %}
+    {% if categories.real_ale %}
+        Real Ale<br>
+    {% endif %}
+    {% if categories.beer_garden %}
+        Beer Garden<br>
+    {% endif %}
+    {% if categories.whisky_collection %}
+        Whisky Collection<br>
+    {% endif %}
+    {% if categories.children_welcome %}
+        Children Welcome<br>
+    {% endif %}
+    {% if categories.pets_welcome %}
+        Pets Welcome<br>
+    {% endif %}
+    {% if categories.dartboard %}
+        Dartboard<br>
+    {% endif %}
+    {% if categories.pool_tables %}
+        Pool Tables<br>
+    {% endif %}
+    {% if categories.games_machines %}
+        Games Machines<br>
+    {% endif %}
+    {% if categories.historic %}
+        Historic Bar<br>
+    {% endif %}
+    {% if categories.wi_fi %}
+        Free Wi-Fi<br>
+    {% endif %}
+    {% if categories.function_room %}
+        Function Room<br>
+    {% endif %}
+
+
+    {% if reviews %}
+
+            <h3>Reviews</h3>
+            {% for review in reviews %}
+            <div class="review">
+                Posted by <b>{{ review.poster }}</b> on {{ review.date_posted }}<br><br>
+                {{ review.text_review }}<br><br>
+                <b>{{ review.poster }}</b>'s ratings:<br>
+                <p>
+                <li>Booze: {{ review.booze }}</li>
+                <li>Beats: {{ review.beats }}</li>
+                <li>BarStaff: {{ review.barstaff }}</li>
+                <li>Bucks: {{ review.bucks }}</li>
+                </p>
+                <h3><li>Overall score by {{ review.poster }}: {{ review.overall }}</li></h3>
+                {{ review.likes }} people have liked this review!
+            </div>
+            {% endfor %}
+
+
+
+        {% else %}
+            <strong>There are no reviews present for this bar.</strong>
+    {% endif %}
+
+   <a href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a>
+
+    {% else %}
+        The specified bar {{ bar_name }} does not exist!
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'the_watering_hole/base.html' %}
+{% block title %}Add Bar{% endblock %}
+{% block body_block %}
+<div class="hero-unit">
+    <h1>Add a Bar</h1>
+
+    <form id="category_form" enctype="multipart/form-data" method="post" action="/the_watering_hole/add_bar/">
+
+       {% csrf_token %}
+       <b>Basic Information</b>
+       {{ bar_form.as_p }}
+       {{ image_form.as_p }}
+       <b>What does your bar have to offer?</b>
+       {{ category_form.as_p }}
+
+        <input type="submit" name="submit" value="Add bar" />
+    </form>
+</div>
+{% endblock %}
+
