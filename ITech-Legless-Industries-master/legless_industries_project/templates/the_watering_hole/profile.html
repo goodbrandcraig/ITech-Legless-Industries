@@ -1,0 +1,21 @@
+{% extends 'the_watering_hole/base.html' %}
+{% load static %} <!-- New line -->
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block body_block %}
+
+
+    <h1>{{ user.username }}'s Watering Hole</h1>
+    <img src="/media/{{ user_profile.picture }}" width = "200" height = "200"/><br>
+    Your Email: {{ user.email }}<br>
+    Your Website: <a href = "{{ user_profile.website }}">{{ user_profile.website }}</a><br>
+
+
+    {% if Bar %}
+    <h2>Your Bars</h2>
+
+    {% endif %}
+
+
+
+{% endblock %}
