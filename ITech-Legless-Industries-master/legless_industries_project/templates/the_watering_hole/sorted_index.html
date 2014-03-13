@@ -7,82 +7,69 @@
 <h1>The Watering Hole</h1>
     <p><h3>Quenching the thirst of the urban savannah</h3></p>
 
-    {% if matching_bars %}
-        {% for bar in matching_bars %}
-            {{ bar }}<br />
-        {% endfor %}
-    {% else %}
-        Sorry, there aren't any bars in this category right now
-    {% endif %}
-
-   {% if category  == 'pool tables' %}
+{% if category  == 'pool_tables' %}
        Fancy shooting some pool with your pint?<br>
-       Bars with Pool Tables:
+       Bars with Pool Tables:<br><br>
    {% endif %}
-   {%if category == 'children welcome' %}
+   {%if category == 'children_welcome' %}
         Under 18 and don't have any ID?<br>
-        Bars where children are welcome:
+        Bars where children are welcome:<br><br>
     {% endif %}
-    {%if category == 'beer garden' %}
+    {%if category == 'beer_garden' %}
         Feel like a pint out in the sunshine?<br>
-        Bars with Beer Gardens:
+        Bars with Beer Gardens:<br><br>
     {% endif %}
-    {%if category == 'big screen' %}
+    {%if category == 'big_screen' %}
         Want to watch the game?<br>
-        Bars with big screens:
+        Bars with big screens:<br><br>
     {% endif %}
     {%if category == 'dartboard' %}
         Fancy throwing weapons at a wall and pretending you're an athlete?<br>
-        Bars with dartboards:
+        Bars with dartboards:<br><br>
     {% endif %}
     {%if category == 'food' %}
         Hungry?<br>
-        Bars serving food:
+        Bars serving food:<br><br>
     {% endif %}
-    {%if category == 'function room' %}
+    {%if category == 'function_room' %}
         Want to book a room for an event?<br>
-        Bars with function rooms:
+        Bars with function rooms:<br><br>
     {% endif %}
     {%if category == 'historic' %}
         Want to drink in the history?<br>
-        Historic Bars:
+        Historic Bars:<br><br>
     {% endif %}
-    {%if category == 'wifi' %}
+    {%if category == 'wi_fi' %}
         Want to leave the house and get a pint but not actually interact with anyone?<br>
-        Bars with Wi-Fi:
+        Bars with Wi-Fi:<br><br>
     {% endif %}
-    {%if category == 'games machines' %}
+    {%if category == 'games_machines' %}
         Try your luck?<br>
-        Bars with games machines:
+        Bars with games machines:<br><br>
     {% endif %}
-    {%if category == 'pets welcome' %}
+    {%if category == 'pets_welcome' %}
         Bringing your dog?<br>
-        Bars where pets are welcome:
+        Bars where pets are welcome:<br><br>
     {% endif %}
-    {%if category == 'real ale' %}
+    {%if category == 'real_ale' %}
         Somebody with taste...<br>
-        Bars with real ales:
+        Bars with real ales:<br><br>
     {% endif %}
-    {%if category == 'whisky collection' %}
+    {%if category == 'whisky_collection' %}
         Looking for a dram?<br>
-        Bars with whisky collections:
+        Bars with whisky collections:<br><br>
     {% endif %}
 
-    {% for Bars in Bars %}
-                <li><a href="/the_watering_hole/bar_page/{{ category_list }}" >{{ Bars.name }}</a></li>
-    {% endfor %}
 
-    {% comment %}
-    {% if Bars %}
-            <ul>
-                {% for Bars in Bars %}
-                <li><a href="/the_watering_hole/bar_page/{{ Bars.get_bar_url }}" >{{ Bars.name }}</a></li>
-                {% endfor %}
-            </ul>
+    {% if matching_bars %}
+
+        {% for bar_urls in bar_urls %}
+           <a href="/the_watering_hole/bar_page/{{ bar_urls }}" >{{ bar_urls }}</a><br>
+        {% endfor %}
     {% else %}
-            <strong>There are no bars present.</strong>
+        Sorry, there aren't any bars in this category right now.
     {% endif %}
-    {% endcomment %}
+
 
 </div>
 {% endblock %}

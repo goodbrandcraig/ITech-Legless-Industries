@@ -32,81 +32,22 @@ def sorted_index(request, category):
 
     matching_bars = []
 
+    bar_urls = []
+
     for bar in bars:
         if getattr(bar, category):
             matching_bars.append(bar)
 
+    for bar in matching_bars:
+        bar_urls.append(str(bar).replace(' ', '_'))
+
     template_context = {'matching_bars': matching_bars}
 
+    template_context['category'] = category
+
+    template_context['bar_urls'] = bar_urls
+
     return render_to_response('the_watering_hole/sorted_index.html', template_context, context)
-
-    '''
-    if category == 'wi_fi':
-        category_list = Category.objects.filter(wi_fi__exact=True)
-
-    elif category == 'food':
-        category_list = Category.objects.filter(food__exact=True)
-
-    elif category == 'beer_garden':
-        category_list = Category.objects.filter(beer_garden__exact=True)
-
-    elif category == 'big_screen':
-        category_list = Category.objects.filter(big_screen__exact=True)
-
-    elif category == 'children_welcome':
-        category_list = Category.objects.filter(children_welcome__exact=True)
-
-    elif category == 'dartboard':
-        category_list = Category.objects.filter(dartboard__exact=True)
-
-    elif category == 'function_room':
-        category_list = Category.objects.filter(function_room__exact=True)
-
-    elif category == 'games_machines':
-        category_list = Category.objects.filter(games_machines__exact=True)
-
-    elif category == 'historic':
-        category_list = Category.objects.filter(historic__exact=True)
-
-    elif category == 'pets_welcome':
-        category_list = Category.objects.filter(pets_welcome__exact=True)
-
-    elif category == 'pool_tables':
-        category_list = Category.objects.filter(pool_tables__exact=True)
-
-    elif category == 'whisky_collection':
-        category_list = Category.objects.filter(whisky_collection__exact=True)
-
-    elif category == 'real_ale':
-        category_list = Category.objects.filter(real_ale__exact=True)
-
-    else:
-        category_list = 'no category'
-
-
-    context_dict = {'Categories': category_list}
-
-
-
-
-
-  #  print context_dict[object]
-
-    #category_list = category_list.order_by('bar')
-
-    context_dict['category'] = category.replace('_', ' ')
-    print context_dict['category']
-   # bar_objs = Bar.objects.filter(name__exact=category_list)
-
-    #context_dict['Bars'] = bar_objs
-
-
-
-   # print context_dict
-
-     # Render the response and send it back!
-    '''
-
 
 
 def bar_page(request, bar_name_url):
