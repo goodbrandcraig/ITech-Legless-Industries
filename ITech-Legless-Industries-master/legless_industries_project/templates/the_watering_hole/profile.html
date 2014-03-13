@@ -11,11 +11,13 @@
     Your Website: <a href = "{{ user_profile.website }}">{{ user_profile.website }}</a><br>
 
 
-    {% if Bar %}
-    <h2>Your Bars</h2>
-
+    {% if user_uploaded_bars %}
+    <h3>Your Bars</h3>
+        {% for user_uploaded_bars in user_uploaded_bars %}
+           <a href="/the_watering_hole/bar_page/{{ user_uploaded_bars }}" >{{ user_uploaded_bars }}</a><br>
+        {% endfor %}
+    {% else %}
+        You haven't uploaded any bars yet!
     {% endif %}
-
-
 
 {% endblock %}

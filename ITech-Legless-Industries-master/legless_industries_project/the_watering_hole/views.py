@@ -114,15 +114,18 @@ def profile_page(request, username):
 
     context_dict['user_profile'] = user_profile
 
-    try:
-        user_bars = Bar.objects.filter(owner=user)
 
-        context_dict['user bars'] = user_bars
+    bars = Bar.objects.all()
 
-    except Bar.DoesNotExist:
-        # We get here if we didn't find the specified bar.
-        # Don't do anything - the template displays the "no bar" message for us.
-        pass
+    user_uploaded_bars = []
+
+    for bar in bars:
+        if bar.owner.username == username:
+            user_uploaded_bars.append(str(bar).replace(' ', '_'))
+
+    print user_uploaded_bars
+
+    context_dict['user_uploaded_bars'] = user_uploaded_bars
 
     return render_to_response('the_watering_hole/profile.html', context_dict, context)
 

@@ -68,16 +68,16 @@
             <h3>Reviews</h3>
             {% for review in reviews %}
             <div class="review">
-                Posted by <b>{{ review.poster }}</b> on {{ review.date_posted }}<br><br>
+                Posted by <b>{{ review.poster }}</b> on {{ review.date_posted }}:<br><br>
                 {{ review.text_review }}<br><br>
-                <b>{{ review.poster }}</b>'s ratings:<br>
+                <b>{{ review.poster }}</b>'s ratings:<br><br>
                 <p>
-                <li>Booze: {{ review.booze }}</li>
-                <li>Beats: {{ review.beats }}</li>
-                <li>BarStaff: {{ review.barstaff }}</li>
-                <li>Bucks: {{ review.bucks }}</li>
+                Booze: {{ review.booze }}<br>
+                Beats: {{ review.beats }}<br>
+                BarStaff: {{ review.barstaff }}<br>
+                Bucks: {{ review.bucks }}<br>
                 </p>
-                <h3><li>Overall score by {{ review.poster }}: {{ review.overall }}</li></h3>
+                <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
                 {{ review.likes }} people have liked this review!
             </div>
             {% endfor %}
