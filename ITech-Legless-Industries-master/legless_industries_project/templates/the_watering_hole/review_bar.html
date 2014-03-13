@@ -7,10 +7,13 @@
     <form id="review_form" method="post" action="/the_watering_hole/review_bar/{{ context_dict.bar_name_url_slash }}">
 
  {% csrf_token %}
-       <b>Your Review of {{ context_dict.bar_name }}</b>
-       {{ review_form.as_p }}
+      <h2>Your Review of {{ context_dict.bar_name }}</h2>
+        <h4>Add ratings for each aspect, 5 being the highest and 1 being the lowest</h4>
+        <h5>Then we'll calculate your overall rating!</h5>
+       {{ review_form }}
 
-     <input type="submit" name="submit" value="Submit Review!" />
+        <br>
+     <button class="btn btn-primary" type="submit">Submit Review</button>
 
 </form>
 

@@ -19,6 +19,7 @@
     </div>
 
 </div>
+
         <h3 style="clear: both;"> What does {{ bar_name }} have to offer?</h3>
 
     {% if categories.food %}
@@ -60,8 +61,8 @@
     {% if categories.function_room %}
         Function Room<br>
     {% endif %}
-
-
+    <br>
+    <a class="btn btn-primary" href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a><br>
     {% if reviews %}
 
             <h3>Reviews</h3>
@@ -87,7 +88,7 @@
             <strong>There are no reviews present for this bar.</strong>
     {% endif %}
 
-   <a href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a>
+
 
     {% else %}
         The specified bar {{ bar_name }} does not exist!
