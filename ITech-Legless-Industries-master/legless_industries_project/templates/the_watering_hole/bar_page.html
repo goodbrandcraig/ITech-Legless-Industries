@@ -62,6 +62,7 @@
         Function Room<br>
     {% endif %}
     <br>
+
     <a class="btn btn-primary" href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a><br>
     {% if reviews %}
 
@@ -78,7 +79,12 @@
                 Bucks: {{ review.bucks }}<br>
                 </p>
                 <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
-                {{ review.likes }} people have liked this review!
+               <b id="like_count">{{ review.likes }}</b> people have liked this review!
+
+            {% if user.is_authenticated %}
+                <button id ="likes" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
+                    Like</button>
+            {% endif %}
             </div>
             {% endfor %}
 

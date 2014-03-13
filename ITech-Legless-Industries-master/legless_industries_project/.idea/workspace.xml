@@ -26,7 +26,7 @@
       <file leaf-file-name="bar_page.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/bar_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="59" selection-start="2444" selection-end="2444" vertical-scroll-proportion="1.556172" vertical-offset="238" max-vertical-offset="1768">
+            <state line="103" column="14" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.8585298" vertical-offset="1132" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/the_watering_hole/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="44" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2091">
+            <state line="92" column="44" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2091">
               <folding />
             </state>
           </provider>
@@ -53,16 +53,35 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="39" selection-start="4371" selection-end="4371" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1683">
-              <folding>
-                <element signature="e#604#1090#0" expanded="false" />
-                <element signature="e#1712#3603#0" expanded="false" />
-                <element signature="e#4786#7240#0" expanded="false" />
-                <element signature="e#7272#9181#0" expanded="false" />
-                <element signature="e#9316#9502#0" expanded="false" />
-                <element signature="e#9531#12466#0" expanded="false" />
-                <element signature="e#12513#14877#0" expanded="false" />
-              </folding>
+            <state line="107" column="4" selection-start="3808" selection-end="3808" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="6749">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="32" selection-start="4161" selection-end="4161" vertical-scroll-proportion="-24.08" vertical-offset="1013" max-vertical-offset="1768">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="the_watering_hole-ajax.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/the_watering_hole-ajax.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="30" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,21 +113,23 @@
         <option value="$PROJECT_DIR$/templates/the_watering_hole/about.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/index.html" />
         <option value="$PROJECT_DIR$/populate_watering_hole.py" />
-        <option value="$PROJECT_DIR$/the_watering_hole/urls.py" />
         <option value="$PROJECT_DIR$/static/css/bootstrap15.css" />
         <option value="$PROJECT_DIR$/static/css/bootstrap16.css" />
         <option value="$PROJECT_DIR$/static/css/bootstrap17.css" />
         <option value="$PROJECT_DIR$/the_watering_hole/models.py" />
-        <option value="$PROJECT_DIR$/templates/the_watering_hole/base.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/sorted_index.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/login.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/register.html" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/add_bar.html" />
         <option value="$PROJECT_DIR$/the_watering_hole/forms.py" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/review_bar.html" />
-        <option value="$PROJECT_DIR$/the_watering_hole/views.py" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/profile.html" />
+        <option value="$PROJECT_DIR$/static/js/the_watering_hole-ajax.js" />
+        <option value="$PROJECT_DIR$/the_watering_hole/urls.py" />
+        <option value="$PROJECT_DIR$/templates/the_watering_hole/base.html" />
+        <option value="$PROJECT_DIR$/the_watering_hole/views.py" />
         <option value="$PROJECT_DIR$/templates/the_watering_hole/bar_page.html" />
+        <option value="$PROJECT_DIR$/static/js/jquery-2.1.0.js" />
       </list>
     </option>
   </component>
@@ -205,6 +226,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="legless_industries_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="legless_industries_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,11 +579,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24231333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16719915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17039403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -596,26 +635,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="55" selection-start="3199" selection-end="3199" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1598">
-          <folding>
-            <element signature="e#604#1090#0" expanded="false" />
-            <element signature="e#1712#3603#0" expanded="false" />
-            <element signature="e#4786#7240#0" expanded="false" />
-            <element signature="e#7272#9181#0" expanded="false" />
-            <element signature="e#9316#9502#0" expanded="false" />
-            <element signature="e#9531#12466#0" expanded="false" />
-            <element signature="e#12513#14877#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="629" />
@@ -668,15 +687,7 @@
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="60" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="476">
-          <folding>
-            <element signature="e#604#1090#0" expanded="false" />
-            <element signature="e#1712#3603#0" expanded="false" />
-            <element signature="e#4786#7240#0" expanded="false" />
-            <element signature="e#7272#9181#0" expanded="false" />
-            <element signature="e#9316#9502#0" expanded="false" />
-            <element signature="e#9531#12466#0" expanded="false" />
-            <element signature="e#12513#14877#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,15 +738,7 @@
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="60" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="476">
-          <folding>
-            <element signature="e#604#1090#0" expanded="false" />
-            <element signature="e#1712#3603#0" expanded="false" />
-            <element signature="e#4786#7240#0" expanded="false" />
-            <element signature="e#7272#9181#0" expanded="false" />
-            <element signature="e#9316#9502#0" expanded="false" />
-            <element signature="e#9531#12466#0" expanded="false" />
-            <element signature="e#12513#14877#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -835,23 +838,9 @@
         <state line="7" column="18" selection-start="176" selection-end="178" vertical-scroll-proportion="0.17296511" vertical-offset="0" max-vertical-offset="18955" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="22" selection-start="3571" selection-end="3571" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="501" selection-end="563" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="64" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <folding />
         </state>
       </provider>
@@ -872,21 +861,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/the_watering_hole/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1445">
-          <folding />
-        </state>
+        <state line="54" column="0" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1445" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/review_bar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="53" selection-start="469" selection-end="469" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/the_watering_hole/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="44" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2091">
           <folding />
         </state>
       </provider>
@@ -898,18 +878,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/the_watering_hole/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="44" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2091">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="32" selection-start="4161" selection-end="4161" vertical-scroll-proportion="-24.08" vertical-offset="1013" max-vertical-offset="1768">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/the_watering_hole/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="39" selection-start="4371" selection-end="4371" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1683">
-          <folding>
-            <element signature="e#604#1090#0" expanded="false" />
-            <element signature="e#1712#3603#0" expanded="false" />
-            <element signature="e#4786#7240#0" expanded="false" />
-            <element signature="e#7272#9181#0" expanded="false" />
-            <element signature="e#9316#9502#0" expanded="false" />
-            <element signature="e#9531#12466#0" expanded="false" />
-            <element signature="e#12513#14877#0" expanded="false" />
-          </folding>
+        <state line="107" column="4" selection-start="3808" selection-end="3808" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="6749">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -920,9 +906,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/the_watering_hole-ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/the_watering_hole/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery-2.1.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.5241287" vertical-offset="357" max-vertical-offset="154989">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/the_watering_hole/bar_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="59" selection-start="2444" selection-end="2444" vertical-scroll-proportion="1.556172" vertical-offset="238" max-vertical-offset="1768">
+        <state line="103" column="14" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.8585298" vertical-offset="1132" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>

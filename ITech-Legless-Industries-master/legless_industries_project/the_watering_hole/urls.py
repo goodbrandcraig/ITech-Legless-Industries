@@ -11,6 +11,7 @@ urlpatterns = patterns('',
                        url(r'^login/$', views.user_login, name='login'),
                        url(r'^logout/$', views.user_logout, name='logout'),
                        url(r'^bar_page/(?P<bar_name_url>\w+)/$', views.bar_page, name='bar'),
+                       url(r'^like_review/$', views.like_review, name='like_review'),
                        url(r'^profile_page/(?P<username>\w+)/$', views.profile_page, name='profile'),
                        url(r'^review_bar/(?P<bar_name_url>\w+)/$', views.add_review, name='review'),
                        )

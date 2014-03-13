@@ -97,6 +97,24 @@ def bar_page(request, bar_name_url):
     # Render the response and send it back!
     return render_to_response('the_watering_hole/bar_page.html', context_dict, context)
 
+@login_required
+def like_review(request):
+    context = RequestContext(request)
+    review_id = None
+    if request.method == 'GET':
+        print 'get'
+        review_id = request.GET['review_id']
+
+    likes = 0
+    if review_id:
+        review = Review.objects.get(id=int(review_id))
+        if review:
+            likes = review.likes + 1
+            review.likes = likes
+            review.save()
+
+    return HttpResponse(likes)
+
 
 def profile_page(request, username):
     # Get the context from the request.
