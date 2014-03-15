@@ -79,10 +79,10 @@
                 Bucks: {{ review.bucks }}<br>
                 </p>
                 <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
-               <b id="like_count">{{ review.likes }}</b> people have liked this review!
+               <b id="like_count_{{review.id}}">{{ review.likes }}</b> people have liked this review!
 
             {% if user.is_authenticated %}
-                <button id ="likes" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
+                <button id ="likes_{{review.id}}" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
                     Like</button>
             {% endif %}
             </div>
