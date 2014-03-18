@@ -89,8 +89,12 @@
                <b id="like_count_{{review.id}}">{{ review.likes }}</b> people have liked this review!
 
             {% if user.is_authenticated %}
+<<<<<<< HEAD
                 <button id ="likes_{{review.id}}" data-catid="{{review.id}}" class="btn btn-mini btn-primary"
                         type="button">
+=======
+                <button id ="likes_{{review.id}}" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
+>>>>>>> 52addb3f20f628fe2c69b89add5314f6d337510a
                     Like</button>
             {% endif %}
             </div>
