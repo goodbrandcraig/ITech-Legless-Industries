@@ -13,6 +13,9 @@
         </span>
         <span class="span4">
             <h4 float="right"> Owner: {{ bar.owner }}<br><br>
+                {% if request.user == bar.owner %}
+                    test
+                {% endif %}
             Address: {{ bar.address }}<br><br>
             Description: {{ bar.bio }}<br><br>
             </h4>
@@ -271,7 +274,8 @@
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 {% endif %}<br>
-                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks: {% if bucks == 1 %}
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
+                {% if bucks == 1 %}
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniEmptyShotIcon.png" %}"/>
                 <img src="{% static "MiniEmptyShotIcon.png" %}"/>

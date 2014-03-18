@@ -1,0 +1,20 @@
+{% extends 'the_watering_hole/base.html' %}
+{% block title %}{{ name }}{% endblock %}
+{% block body_block %}
+<div class="hero-unit">
+
+    <form id="edit_bar" method="post" action="/the_watering_hole/edit_bar/{{ context_dict.bar_url }}/">
+
+ {% csrf_token %}
+      <h2>Edit {{ context_dict.bar_to_edit }}</h2>
+
+       {{ bar_form.as_p }}
+        {{ event_form.as_p }}
+
+        <br>
+     <button class="btn btn-primary" type="submit">Submit Changes</button>
+
+</form>
+
+</div>
+{% endblock %}

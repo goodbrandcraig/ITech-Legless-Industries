@@ -26,8 +26,14 @@ class Bar(models.Model):
     address = models.CharField(max_length=256, unique=True)
     bio = models.TextField()
 
+    #overall rating
+    overall_rating = models.IntegerField(default=0)
+
     def __unicode__(self):
         return self.name
+
+    def get_overall(self):
+        return self.overall_rating
 
     #method to return bar name with underscores instead of spaces
     #so that the URL works properly
@@ -112,7 +118,6 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.bar.name
-
 
 
 class Event(models.Model):

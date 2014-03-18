@@ -77,8 +77,30 @@
 
         {% for Events in Events %}
             <p class="link"><a href="/the_watering_hole/bar_page/{{ Events.bar.get_bar_url }}" >{{ Events.bar.name }}:
-                {{ Events.bar.address }}</a>
-            <br><h5>News</h5><br>{{ Events.news }}
+                {{ Events.bar.address }}</a><br>
+            <br> <b>Rating:</b>
+             {% if Events.bar.overall_rating == 1 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+             {% elif Events.bar.overall_rating == 2 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif Events.bar.overall_rating == 3 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif Events.bar.overall_rating == 4 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif Events.bar.overall_rating == 5 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/>
+                {% endif %}<br>
+            <h5>News</h5><br>{{ Events.news }}
             <h5>Events</h5><br>
             {{ Events.events }}<br><br><br>
         {% endfor %}

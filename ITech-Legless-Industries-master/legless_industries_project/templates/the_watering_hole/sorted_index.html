@@ -1,4 +1,5 @@
 {% extends 'the_watering_hole/base.html' %}
+{% load static %}
 {% block title %}The Watering Hole - Quenching the Thirst of the Urban Savannah{% endblock %}
 
 {% block body_block %}
@@ -65,6 +66,28 @@
 
         {% for bar in matching_bar_objs %}
            <a href="/the_watering_hole/bar_page/{{ bar.get_bar_url }}" >{{ bar.name }}: {{ bar.address }}</a><br>
+           <b>Rating:</b>
+             {% if bar.overall_rating == 1 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+             {% elif bar.overall_rating == 2 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif bar.overall_rating == 3 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif bar.overall_rating == 4 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif bar.overall_rating == 5 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/>
+                {% endif %}<br>
         {% endfor %}
     {% else %}
         Sorry, there aren't any bars in this category right now.

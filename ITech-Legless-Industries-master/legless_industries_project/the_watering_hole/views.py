@@ -43,6 +43,8 @@ def sorted_index(request, category):
         bar = Bar.objects.get(name=bar)
         matching_bar_objs.append(bar)
 
+
+
     template_context = {'matching_bars': matching_bars}
 
     template_context['category'] = category
@@ -93,11 +95,17 @@ def bar_page(request, bar_name_url):
             overall_beats = overall_beats + review.get_beats()
             review_count = review_count + 1
 
-        review_overall = int(round(float(review_overall)/float(review_count)))
-        overall_booze = int(round(float(overall_booze/float(review_count))))
-        overall_bucks = int(round(float(overall_bucks)/float(review_count)))
-        overall_barstaff = int(round(float(overall_barstaff)/float(review_count)))
-        overall_beats = int(round(float(overall_beats)/float(review_count)))
+        if review_count != 0:
+            review_overall = int(round(float(review_overall)/float(review_count)))
+            overall_booze = int(round(float(overall_booze/float(review_count))))
+            overall_bucks = int(round(float(overall_bucks)/float(review_count)))
+            overall_barstaff = int(round(float(overall_barstaff)/float(review_count)))
+            overall_beats = int(round(float(overall_beats)/float(review_count)))
+
+
+
+        bar.overall_rating = review_overall
+        bar.save()
 
         #retrieve associated photo
         photo = Photo.objects.get(bar=bar)
@@ -178,13 +186,43 @@ def profile_page(request, username):
 
     for bar in bars:
         if bar.owner.username == username:
-            user_uploaded_bars.append(str(bar).replace(' ', '_'))
-
-    print user_uploaded_bars
+            user_uploaded_bars.append(bar)
 
     context_dict['user_uploaded_bars'] = user_uploaded_bars
 
     return render_to_response('the_watering_hole/profile.html', context_dict, context)
+
+
+def edit_bar(request, bar_name_url):
+    context = RequestContext(request)
+
+    bar = bar_name_url.replace('_', ' ')
+
+    bar_to_edit = Bar.objects.get(name=bar)
+    event_to_edit = Event.objects.get(bar=bar_to_edit)
+
+    context_dict = {'bar_to_edit': bar_to_edit}
+    context_dict['bar_to_edit'] = bar_to_edit
+    context_dict['bar_url'] = bar_name_url
+
+    bar_form = BarForm(instance=bar_to_edit)
+    event_form = EventForm(instance=event_to_edit)
+
+    if request.method == 'POST':
+        bar_form = BarForm(request.POST, instance=bar_to_edit)
+        event_form = EventForm(request.POST, instance=event_to_edit)
+
+        if bar_form.is_valid() and event_form.is_valid():
+            bar_form.save()
+            event_form.save()
+
+
+        else:
+            print bar_form.errors
+
+    return render_to_response('the_watering_hole/edit_bar.html', {'event_form': event_form, 'bar_form': bar_form,
+                                                                  'context_dict':context_dict}, context)
+
 
 
 def about(request):
