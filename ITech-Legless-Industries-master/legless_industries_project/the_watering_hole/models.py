@@ -82,21 +82,6 @@ class Review(models.Model):
         return self.beats
 
 
-class Comment(models.Model):
-    #link to posting user
-    poster = models.ForeignKey(User)
-
-    #link to review being commented on
-    review = models.ForeignKey(Review)
-
-    text_comment = models.TextField()
-    date_posted = models.DateTimeField()
-    likes = models.IntegerField(default=0)
-
-    def __unicode__(self):
-        return self.text_comment
-
-
 class Category(models.Model):
     #link to bar
     bar = models.ForeignKey(Bar)

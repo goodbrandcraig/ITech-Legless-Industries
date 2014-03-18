@@ -4,24 +4,27 @@ from datetime import datetime
 
 
 def populate():
-    john = add_user('john', 'john@john.com', 'johnpassword')
+    john = User.objects.create_user('john', 'john@john.com', 'johnpassword')
 
     john_profile = add_user_profile(john, 'www.john.com',
-                                    '/media/profile_images/988341_10201581831484988_1056121486_n.jpg')
+                                    'profile_images/john.jpg')
 
-    chris = add_user('chris', 'chris@chris.com', 'chrispassword')
+    dave = User.objects.create_user('dave', 'dave@dave.com', 'davepassword')
+
+    dave_profile = add_user_profile(dave, 'www.dave.com', 'profile_images/dave.jpg')
+
+    chris = User.objects.create_user('chris', 'chris@chris.com', 'chrispassword')
 
     chris_profile = add_user_profile(chris, 'www.chrischris.com',
-                                     '/media/profile_images/988609_543226820336_2091969694_n.jpg')
+                                     'profile_images/chris.jpg')
 
+    ##########################################THE GARAGE################################################################
     garage_bar = add_bar(john, 'The Garage', '490 Sauchiehall St', 'The Garage is a music venue and nightclub located '
                                                                    'at 490 Sauchiehall Street in Glasgow which opened '
-                                                                   'in 1994. It is Scotlands largest nightclub.')
+                                                                   'in 1994. It is Scotlands largest nightclub.', 3)
 
-    garage_review = add_review(john, garage_bar, 3, 4, 3, 3,
+    garage_review = add_review(chris, garage_bar, 3, 4, 3, 3,
                                'OMG I like ttly <3 the Garage bn goin evryday since I ws 14 lol!!!!')
-
-    garage_review_comment = add_comment(chris, garage_review, 'omg bbz ure so ttly right lololol!!!1!')
 
     garage_categories = add_category(garage_bar, True, True, False, False, True, True, True, False, False, False,
                                      True, True, False)
@@ -36,6 +39,70 @@ def populate():
                                                                     'the past including fashion shows, awards '
                                                                     'ceremonies, conferences and product launches.')
 
+    ##############################################CAMPUS################################################################
+    campus_bar = add_bar(john, 'Campus', '332 Sauchiehall St', 'Glasgows First Frat house - Campus has a bigger '
+                                                               'and better new home.... Open 7 nights a week.', 3)
+
+    campus_review = add_review(chris, campus_bar, 3, 4, 3, 3,
+                               'Thoroughly enjoyed coming here for my 13th Birthday')
+
+    campus_categories = add_category(campus_bar, True, False, False, False, False, True, False, True, False, True,
+                                     True, False, True)
+
+    garage_photo = add_photo(campus_bar, '/uploads/campus.jpg')
+
+    garage_news = add_event(campus_bar, 'Campus is a students union for non-students. We were recently shut down because'
+                                        ' someone chewed someones ear off but we will be reopening soon in a new home!',
+                                        'Campus will be opening in our new home soon! Watch this space if you still need'
+                                        'your dj cammy fix!')
+
+    #######################################THE GUU######################################################################
+    GUU_bar = add_bar(john, 'GUU', 'University Avenue', 'Glasgow University Union (GUU) is one of the largest and oldest'
+                                                        ' students unions in the UK, serving students and alumni of the '
+                                                        'University of Glasgow since 1885', 5)
+
+    GUU_review = add_review(chris, GUU_bar, 5, 5, 5, 5,
+                               'Excellent craic, many pints and the atmosphere is stupendous')
+
+    GUU_categories = add_category(GUU_bar, True, True, True, True, False, True, False, True, False, True,
+                                     False, True, False)
+
+    GUU_photo = add_photo(GUU_bar, '/uploads/GUU.jpg')
+
+    GUU_news = add_event(GUU_bar, 'Whether you are a current student, a life member, a member of the public enquiring'
+                                  ' about venue hire, or even just visiting, you should find the information you are '
+                                  'looking for here. If not, please do not hesitate to contact us.',
+                                  'Daft Friday, commonly referred to as D*** F*****, is a simply stunning event, '
+                                  'celebrating its 106th year in December 2014. '
+                                  'Held in honour of GUUs President, this end-of-term ball is a celebration like'
+                                  ' none other.')
+
+    ########################################################QMU#########################################################
+    QMU_bar = add_bar(john, 'QMU', '22 University Gardens', 'The Queen Margaret Union (QMU) is one of two students '
+                                                            'unions at the University of Glasgow, Scotland. Founded in'
+                                                            ' 1890, it caters for the social and cultural needs of its'
+                                                            ' members by providing a range of services including,'
+                                                            ' entertainments, catering, shop facilities, bars and '
+                                                            'games.', 2)
+
+    QMU_review = add_review(chris, QMU_bar, 2, 2, 1, 3,
+                            'Not as good as the union down the road')
+
+    QMU_categories = add_category(QMU_bar, False, True, False, True, False, True, False, True, False, False,
+                                     False, True, True)
+
+    QMU_photo = add_photo(QMU_bar, '/uploads/QMU.jpg')
+
+    QMU_news = add_event(QMU_bar, 'Joining the QM Union is dead easy, very worthwhile, and while you are a student it is'
+                                  ' also completely free.',
+                                  'Spring Break is on its way, and what better way to celebrate than a night out at the'
+                                  ' QMU. And this year we bring you...Wild, Wild West END! Hipsters vs Cowboys!'
+                                  'Love beanies or a Stetson? Love big black glasses or a piercing gaze? Love converse'
+                                  ' or kicks? Are you a fan of the Mo or....well, if you like Moustaches this whole'
+                                  ' event is for you!! Entry only 3/4 pounds Members/Non with all sorts of cowboy and '
+                                  'hipster games taking place from 9pm.')
+
+    ####################################################################################################################
 
 def add_user(name, email, password):
     u = User.objects.get_or_create(username=name, email=email, password=password)
@@ -49,12 +116,8 @@ def add_user_profile(user, website, picture):
     return p[0]
 
 
-def add_bar(owner, name, address, bio):
-   # print type(owner)
-   # print type(name)
-   # print type(address)
-   # print type(bio)
-    b = Bar.objects.get_or_create(owner=owner, name=name, address=address, bio=bio)
+def add_bar(owner, name, address, bio, overall_rating):
+    b = Bar.objects.get_or_create(owner=owner, name=name, address=address, bio=bio, overall_rating=overall_rating)
     print 'adding bar: ' + name
     return b[0]
 
@@ -65,13 +128,6 @@ def add_review(poster, bar,  booze, beats, barstaff, bucks, text_review):
                                      bucks=bucks, overall=((booze+beats+barstaff+bucks)/4), likes=0, favourites=0,
                                      date_posted=datetime.now(), text_review=text_review)
     return r[0]
-
-
-def add_comment(poster, review, text_comment):
-    print 'adding comment: ' + text_comment
-    c = Comment.objects.get_or_create(poster=poster, review=review, text_comment=text_comment,
-                                      date_posted=datetime.now(), likes=0)
-    return c[0]
 
 
 def add_category(bar, food, big_screen, beer_garden, real_ale, whisky_collection,children_welcome, pets_welcome,
@@ -99,7 +155,7 @@ def add_photo(bar, image):
 if __name__ == '__main__':
     print "Starting Watering Hole population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'legless_industries_project.settings')
-    from the_watering_hole.models import User, UserProfile, Bar, Review, Comment, Category, Event, Photo
+    from the_watering_hole.models import User, UserProfile, Bar, Review, Category, Event, Photo
     populate()
 
 #d.maxwell.1@research.gla.ac.uk
