@@ -8,12 +8,10 @@ $(document).ready(function() {
                $('#'+likeCountId).html(data);
                $('#'+buttonId).hide();
       });
-<<<<<<< HEAD
+
  });
-=======
+
 
 
 });
 
->>>>>>> 52addb3f20f628fe2c69b89add5314f6d337510a
-});
