@@ -77,6 +77,28 @@ def bar_page(request, bar_name_url):
         # Note that filter returns >= 1 model instance.
         reviews = Review.objects.filter(bar=bar)
 
+        review_overall = 0
+        overall_booze = 0
+        overall_bucks= 0
+        overall_barstaff = 0
+        overall_beats = 0
+        review_count = 0
+
+        #get all of the overall reviews, calculate the averages for each review category and send to template
+        for review in reviews:
+            review_overall = review_overall + review.get_overall()
+            overall_booze = overall_booze + review.get_booze()
+            overall_bucks = overall_bucks + review.get_bucks()
+            overall_barstaff = overall_barstaff + review.get_barstaff()
+            overall_beats = overall_beats + review.get_beats()
+            review_count = review_count + 1
+
+        review_overall = int(round(float(review_overall)/float(review_count)))
+        overall_booze = int(round(float(overall_booze/float(review_count))))
+        overall_bucks = int(round(float(overall_bucks)/float(review_count)))
+        overall_barstaff = int(round(float(overall_barstaff)/float(review_count)))
+        overall_beats = int(round(float(overall_beats)/float(review_count)))
+
         #retrieve associated photo
         photo = Photo.objects.get(bar=bar)
 
@@ -97,6 +119,14 @@ def bar_page(request, bar_name_url):
         context_dict['categories'] = categories
         #and events objects
         context_dict['events'] = events
+        #and the overall scores
+        context_dict['overall'] = review_overall
+        context_dict['bucks'] = overall_bucks
+        context_dict['beats'] = overall_beats
+        context_dict['booze'] = overall_booze
+        context_dict['barstaff'] = overall_barstaff
+        #and the number of reviews
+        context_dict['no_of_reviews'] = review_count
 
     except Bar.DoesNotExist:
         # We get here if we didn't find the specified bar.

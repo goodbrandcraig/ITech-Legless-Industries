@@ -60,6 +60,21 @@ class Review(models.Model):
     def __unicode__(self):
         return self.text_review
 
+    def get_overall(self):
+        return self.overall
+
+    def get_booze(self):
+        return self.booze
+
+    def get_bucks(self):
+        return self.bucks
+
+    def get_barstaff(self):
+        return self.barstaff
+
+    def get_beats(self):
+        return self.beats
+
 
 class Comment(models.Model):
     #link to posting user

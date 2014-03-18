@@ -14,7 +14,14 @@
         <span class="span4">
             <h4 float="right"> Owner: {{ bar.owner }}<br><br>
             Address: {{ bar.address }}<br><br>
-            Description: {{ bar.bio }}<br><br></h4>
+            Description: {{ bar.bio }}<br><br>
+            Overall Rating from {{ no_of_reviews }} reviews: <br><br></h4>
+
+            <h5>Overall: {{ overall }}<br>
+                Booze: {{ booze }}<br>
+            Bucks: {{ bucks }}<br>
+            Barstaff: {{ barstaff }}<br>
+            Beats: {{ beats }}<br><br></h5>
         </span>
     </div>
 
@@ -86,8 +93,11 @@
                 Bucks: {{ review.bucks }}<br>
                 </p>
                 <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
-               <b id="like_count_{{review.id}}">{{ review.likes }}</b> people have liked this review!
-
+            {% if review.likes < 1 or review.likes > 1 %}
+               <b id="like_count_{{review.id}}">{{ review.likes }}</b> likes so far
+               {% else %}
+                <b id="like_count_{{review.id}}">{{ review.likes }}</b> like so far
+            {% endif %}
             {% if user.is_authenticated %}
                     <button id ="likes_{{review.id}}" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
                     Like</button>
