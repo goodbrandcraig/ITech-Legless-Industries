@@ -15,22 +15,175 @@
             <h4 float="right"> Owner: {{ bar.owner }}<br><br>
             Address: {{ bar.address }}<br><br>
             Description: {{ bar.bio }}<br><br>
-            Overall Rating from {{ no_of_reviews }} reviews: <br><br></h4>
+            </h4>
 
-            <h5>Overall: {{ overall }}<br>
-                Booze: {{ booze }}<br>
-            Bucks: {{ bucks }}<br>
-            Barstaff: {{ barstaff }}<br>
-            Beats: {{ beats }}<br><br></h5>
+
         </span>
+        <div style="clear:both">
+            <h4>{{ bar.name }}'s ratings from {{ no_of_reviews }} reviews: </h4>
+                Overall:
+                {% if overall == 1 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif overall == 2 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif overall == 3 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif overall == 4 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "EmptyMugIcon.png" %}"/>
+                {% elif overall == 5 %}
+                    <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
+                    {% static "FullMugIcon.png" %}"/>
+                {% endif %}
+
+               <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
+            {% if booze == 1 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif booze == 2 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif booze == 3 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif booze == 4 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif booze == 5 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                {% endif %}
+
+          <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
+            {% if bucks == 1 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif bucks == 2 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif bucks == 3 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif bucks == 4 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif bucks == 5 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                {% endif %}
+
+          <br>BarStaff:
+            {% if barstaff == 1 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif barstaff == 2 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif barstaff == 3 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif barstaff == 4 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif barstaff == 5 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                {% endif %}
+
+          <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Beats:
+            {% if beats == 1 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif beats == 2 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif beats == 3 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif beats == 4 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "EmptyShotIcon.png" %}"/>
+                {% elif beats == 5 %}
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                <img src="{% static "FullShotIcon.png" %}"/>
+                {% endif %}
+
+        </div>
+
     </div>
 
 </div>
 
-
-
         <h3 style="clear: both;"> What does {{ bar_name }} have to offer?</h3><br>
-        <marquee behavior="scroll" direction="left" onmouseover="this.stop();"
+       <h4> <marquee behavior="scroll" direction="left" onmouseover="this.stop();"
                                           onmouseout="this.start();">{{ events.news }}</marquee><br><br>
 
     {% if categories.food %}
@@ -74,10 +227,10 @@
     {% endif %}
     <br>
         {{ events.events }}<br><br>
-
+    </h4>
         ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 
-    <a class="btn btn-primary" href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a><br>
+    <a class="btn btn-primary" href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a>
     {% if reviews %}
 
             <h3>Reviews</h3>
@@ -87,12 +240,155 @@
                 {{ review.text_review }}<br><br>
                 <b>{{ review.poster }}</b>'s ratings:<br><br>
                 <p>
-                Booze: {{ review.booze }}<br>
-                Beats: {{ review.beats }}<br>
-                BarStaff: {{ review.barstaff }}<br>
-                Bucks: {{ review.bucks }}<br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Beats: {% if review.beats == 1 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif beats == 2 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif beats == 3 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif beats == 4 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif beats == 5 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                {% endif %}<br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks: {% if bucks == 1 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif bucks == 2 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif bucks == 3 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif bucks == 4 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif bucks == 5 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                {% endif %}<br>
+                BarStaff:  {% if barstaff == 1 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif barstaff == 2 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif barstaff == 3 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif barstaff == 4 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif barstaff == 5 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                {% endif %}<br>
+            &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
+            {% if booze == 1 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif booze == 2 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif booze == 3 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif booze == 4 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniEmptyShotIcon.png" %}"/>
+                {% elif booze == 5 %}
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                <img src="{% static "MiniFullShotIcon.png" %}"/>
+                {% endif %}<br>
                 </p>
-                <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
+                <h4>Overall score by {{ review.poster }}:
+                   {% if review.overall == 1 %}
+                    <img src="{% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniEmptyMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/><img src="{% static "MiniEmptyMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/>
+                {% elif review.overall == 2 %}
+                    <img src="{% static "Mini.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/><img src="{% static "MiniEmptyMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/>
+                {% elif review.overall == 3 %}
+                    <img src="{% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniEmptyMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/>
+                {% elif review.overall == 4 %}
+                    <img src="{% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniEmptyMugIcon.png" %}"/>
+                {% elif review.overall == 5 %}
+                    <img src="{% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniFullMugIcon.png" %}"/><img src="{% static "MiniFullMugIcon.png" %}"/><img src="
+                    {% static "MiniFullMugIcon.png" %}"/>
+                {% endif %}
+                <br>
             {% if review.likes < 1 or review.likes > 1 %}
                <b id="like_count_{{review.id}}">{{ review.likes }}</b> likes so far
                {% else %}
