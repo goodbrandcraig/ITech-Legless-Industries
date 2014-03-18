@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required
 import datetime
 now = datetime.datetime.now() #for getting current datetime
 
-from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm, CategoryForm, ReviewForm
-from the_watering_hole.models import Bar, Review, Photo, Category, UserProfile, User
+from the_watering_hole.forms import UserForm, UserProfileForm, BarForm, ImageForm, CategoryForm, ReviewForm, EventForm
+from the_watering_hole.models import Bar, Review, Photo, Category, UserProfile, User, Event
 
 
 def index(request):  # Request the context of the request.
@@ -19,7 +19,9 @@ def index(request):  # Request the context of the request.
     # Order the bars by name
     # Place the list in our context_dict dictionary which will be passed to the template engine.
     bar_list = Bar.objects.order_by('name')
+    event_list = Event.objects.order_by('bar')
     context_dict = {'Bars': bar_list}
+    context_dict['Events'] = event_list
 
     # Render the response and send it back!
     return render_to_response('the_watering_hole/index.html', context_dict, context)
@@ -31,21 +33,23 @@ def sorted_index(request, category):
     bars = Category.objects.all()
 
     matching_bars = []
-
-    bar_urls = []
+    matching_bar_objs = []
 
     for bar in bars:
         if getattr(bar, category):
             matching_bars.append(bar)
 
     for bar in matching_bars:
-        bar_urls.append(str(bar).replace(' ', '_'))
+        bar = Bar.objects.get(name=bar)
+        matching_bar_objs.append(bar)
 
     template_context = {'matching_bars': matching_bars}
 
     template_context['category'] = category
 
-    template_context['bar_urls'] = bar_urls
+    template_context['matching_bar_objs'] = matching_bar_objs
+
+    print matching_bar_objs
 
     return render_to_response('the_watering_hole/sorted_index.html', template_context, context)
 
@@ -79,6 +83,9 @@ def bar_page(request, bar_name_url):
         #retrieve categories
         categories = Category.objects.get(bar=bar)
 
+        #retreive events
+        events = Event.objects.get(bar=bar)
+
         # Adds our results list to the template context under name pages.
         context_dict['reviews'] = reviews
         # We also add the bar object from the database to the context dictionary.
@@ -88,6 +95,8 @@ def bar_page(request, bar_name_url):
         context_dict['photo'] = photo
         # and category object
         context_dict['categories'] = categories
+        #and events objects
+        context_dict['events'] = events
 
     except Bar.DoesNotExist:
         # We get here if we didn't find the specified bar.
@@ -282,6 +291,7 @@ def add_bar(request):
             bar_form = BarForm(request.POST)
             image_form = ImageForm(request.POST, request.FILES)
             category_form = CategoryForm(request.POST)
+            events_form = EventForm(request.POST)
 
              # Have we been provided with a valid form?
             if bar_form.is_valid():
@@ -300,6 +310,10 @@ def add_bar(request):
                 category = category_form.save(commit=False)
                 category.bar = bar
 
+                # And now the events instance
+                event = events_form.save(commit=False)
+                event.bar = bar
+
                 # Did the user provide a bar picture?
                 # If so, we need to get it from the input form and put it in the photo model.
                 if 'picture' in request.FILES:
@@ -311,6 +325,9 @@ def add_bar(request):
                 #and the Category instance
                 category.save()
 
+                #and the event instance
+                event.save()
+
                 # Update our variable to tell the template creation was successful.
                 created = True
 
@@ -320,18 +337,19 @@ def add_bar(request):
 
             else:
                 # The supplied form contained errors - just print them to the terminal.
-                print bar_form.errors, image_form.errors, category_form.errors
+                print bar_form.errors, image_form.errors, category_form.errors, events_form.errors
         else:
             # If the request was not a POST, display the form to enter details.
             bar_form = BarForm()
             image_form = ImageForm()
             category_form = CategoryForm()
+            events_form = EventForm()
 
             # Bad form (or form details), no form supplied...
             # Render the form with error messages (if any).
             return render_to_response('the_watering_hole/add_bar.html', {'bar_form': bar_form, 'image_form': image_form,
-                                                                         'category_form': category_form,
-                                                                         'created': created}, context)
+                                                                         'category_form': category_form, 'event_form':
+                                                                         events_form, 'created': created}, context)
 
     else:
         return HttpResponse("You are not logged in.")

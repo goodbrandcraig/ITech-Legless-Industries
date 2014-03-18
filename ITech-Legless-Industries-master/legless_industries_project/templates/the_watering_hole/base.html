@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device.width, initial-scale=1.0">
         <!--Bootstrap -->
         <link href="{% static 'css/bootstrap-fluid.adj.css' %}" rel="stylesheet">
-        <link href="{% static 'css/bootstrap18.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/bootstrap19.css' %}" rel="stylesheet" media="screen">
         <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
 
         <title>The Watering Hole - {% block title %}Quenching the thirst of the urban savannah{% endblock %}</title>
@@ -75,8 +75,12 @@
         {% block body_block %}
         {% endblock %}
 
-        {% for Bars in Bars %}
-            <p class="link"><a href="/the_watering_hole/bar_page/{{ Bars.get_bar_url }}" >{{ Bars.name }}</a><p>
+        {% for Events in Events %}
+            <p class="link"><a href="/the_watering_hole/bar_page/{{ Events.bar.get_bar_url }}" >{{ Events.bar.name }}:
+                {{ Events.bar.address }}</a>
+            <br><h5>News</h5><br>{{ Events.news }}
+            <h5>Events</h5><br>
+            {{ Events.events }}<br><br><br>
         {% endfor %}
         </div>
         <!-- /span -->

@@ -22,6 +22,12 @@
     width: 65px;
 }
 
+​.scroll {
+position: absolute;
+right: -200px;
+width: 200px;
+}​
+
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -6143,6 +6149,7 @@ a.badge:focus {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
+  overflow: hidden;
   background-color: #FFFFF2;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;

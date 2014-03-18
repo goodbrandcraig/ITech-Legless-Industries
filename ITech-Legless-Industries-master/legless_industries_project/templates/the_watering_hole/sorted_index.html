@@ -63,8 +63,8 @@
 
     {% if matching_bars %}
 
-        {% for bar_urls in bar_urls %}
-           <a href="/the_watering_hole/bar_page/{{ bar_urls }}" >{{ bar_urls }}</a><br>
+        {% for bar in matching_bar_objs %}
+           <a href="/the_watering_hole/bar_page/{{ bar.get_bar_url }}" >{{ bar.name }}: {{ bar.address }}</a><br>
         {% endfor %}
     {% else %}
         Sorry, there aren't any bars in this category right now.

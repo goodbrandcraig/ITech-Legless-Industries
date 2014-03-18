@@ -3,9 +3,9 @@
 {% block title %}{{ name }}{% endblock %}
 
 {% block body_block %}
-<div class="hero-unit">
+<div class="hero-unit" overflow="hidden">
 
-    <div>
+    <div overflow="hidden">
     <h2>{{ bar_name }}</h2>
     {% if bar %}
          <span class="span4">
@@ -20,7 +20,11 @@
 
 </div>
 
-        <h3 style="clear: both;"> What does {{ bar_name }} have to offer?</h3>
+
+
+        <h3 style="clear: both;"> What does {{ bar_name }} have to offer?</h3><br>
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();"
+                                          onmouseout="this.start();">{{ events.news }}</marquee><br><br>
 
     {% if categories.food %}
         Food<br>
@@ -62,6 +66,9 @@
         Function Room<br>
     {% endif %}
     <br>
+        {{ events.events }}<br><br>
+
+        ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 
     <a class="btn btn-primary" href="/the_watering_hole/review_bar/{{ bar.get_bar_url }}" > Review this Bar!</a><br>
     {% if reviews %}
@@ -79,10 +86,11 @@
                 Bucks: {{ review.bucks }}<br>
                 </p>
                 <h4>Overall score by {{ review.poster }}: {{ review.overall }}</h4>
-               <b id="like_count">{{ review.likes }}</b> people have liked this review!
+               <b id="like_count_{{review.id}}">{{ review.likes }}</b> people have liked this review!
 
             {% if user.is_authenticated %}
-                <button id ="likes" data-catid="{{review.id}}" class="btn btn-mini btn-primary" type="button">
+                <button id ="likes_{{review.id}}" data-catid="{{review.id}}" class="btn btn-mini btn-primary"
+                        type="button">
                     Like</button>
             {% endif %}
             </div>

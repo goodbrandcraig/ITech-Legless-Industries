@@ -1,7 +1,7 @@
 __author__ = 'Craig'
 
 from django import forms
-from the_watering_hole.models import UserProfile, Bar, Photo, Category, Review
+from the_watering_hole.models import UserProfile, Bar, Photo, Category, Review, Event
 from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
 
@@ -77,3 +77,9 @@ class CategoryForm(forms.ModelForm):
         model = Category
         fields = ('food', 'big_screen', 'beer_garden', 'real_ale', 'whisky_collection', 'children_welcome',
                   'pets_welcome', 'dartboard', 'pool_tables', 'games_machines', 'historic', 'wi_fi', 'function_room',)
+
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ('news', 'events')
