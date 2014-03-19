@@ -8,11 +8,11 @@
     <div overflow="hidden">
     <h2>{{ bar_name }}</h2>
     {% if bar %}
-         <span class="span4">
-            <img src="/media/{{ photo.image }}"/><br>
+         <span class="span3">
+            <img src="/media/{{ photo.image }}" class="img-polaroid"/><br>
         </span>
-        <span class="span4">
-            <h4 float="right"> Owner: {{ bar.owner }}<br><br>
+        <span class="span3">
+            <h4>
                 {% if request.user == bar.owner %}
                     test
                 {% endif %}
@@ -22,9 +22,10 @@
 
 
         </span>
-        <div style="clear:both">
-           <br><h4>{{ bar.name }}'s ratings from {{ no_of_reviews }} reviews: </h4>
-                Overall:
+
+        <span class="span3">
+          <h4>{{ bar.name }}'s ratings from {{ no_of_reviews }} reviews: </h4>
+                <h5>Overall:
                 {% if overall == 1 %}
                     <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
                     {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
@@ -47,7 +48,7 @@
                     {% static "FullMugIcon.png" %}"/>
                 {% endif %}
 
-               <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
+              <br> <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
             {% if booze == 1 %}
                 <img src="{% static "FullShotIcon.png" %}"/>
                 <img src="{% static "EmptyShotIcon.png" %}"/>
@@ -80,7 +81,7 @@
                 <img src="{% static "FullShotIcon.png" %}"/>
                 {% endif %}
 
-          <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
+          <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
             {% if bucks == 1 %}
                 <img src="{% static "FullShotIcon.png" %}"/>
                 <img src="{% static "EmptyShotIcon.png" %}"/>
@@ -178,8 +179,8 @@
                 <img src="{% static "FullShotIcon.png" %}"/>
                 <img src="{% static "FullShotIcon.png" %}"/>
                 {% endif %}
+            </h5></span>
 
-        </div>
 
     </div>
 
@@ -190,45 +191,45 @@
                                           onmouseout="this.start();">{{ events.news }}</marquee><br><br>
 
     {% if categories.food %}
-        Food<br>
+        <img src="{% static "food.jpg" %}" title="Bar Food"/>
     {% endif %}
     {% if categories.big_screen %}
-        Big Screen<br>
+        <img src="{% static "big_screen.jpg" %}" title="Big Screen"/>
     {% endif %}
     {% if categories.real_ale %}
-        Real Ale<br>
+        <img src="{% static "real_ale.jpg" %}" title="Real Ale"/>
     {% endif %}
     {% if categories.beer_garden %}
-        Beer Garden<br>
+        <img src="{% static "beer_garden.jpg" %}" title="Beer Garden"/>
     {% endif %}
     {% if categories.whisky_collection %}
-        Whisky Collection<br>
+        <img src="{% static "whisky_collection.jpg" %}" title="Whisky Collection"/>
     {% endif %}
     {% if categories.children_welcome %}
-        Children Welcome<br>
+        <img src="{% static "children_welcome.jpg" %}" title="Children Welcome"/>
     {% endif %}
     {% if categories.pets_welcome %}
-        Pets Welcome<br>
+        <img src="{% static "pets_welcome.jpg" %}"title="Pets Welcome"/>
     {% endif %}
     {% if categories.dartboard %}
-        Dartboard<br>
+        <img src="{% static "dartboard.jpg" %}" title="Dartboard"/>
     {% endif %}
     {% if categories.pool_tables %}
-        Pool Tables<br>
+        <img src="{% static "pool_table.jpg" %}" title="Pool Tables"/>
     {% endif %}
     {% if categories.games_machines %}
-        Games Machines<br>
+        <img src="{% static "games_machines.jpg" %}" title="Games Machines"/>
     {% endif %}
     {% if categories.historic %}
-        Historic Bar<br>
+        <img src="{% static "historic.jpg" %}" title="Historic Bar"/>
     {% endif %}
     {% if categories.wi_fi %}
-        Free Wi-Fi<br>
+        <img src="{% static "wi_fi.jpg" %}" title="Free Wi-Fi"/>
     {% endif %}
     {% if categories.function_room %}
-        Function Room<br>
+         <img src="{% static "function_room.jpg" %}" title="Function Room"/>
     {% endif %}
-    <br>
+    <br><br>
         {{ events.events }}<br><br>
     </h4>
         ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
@@ -238,7 +239,7 @@
 
             <h3>Reviews</h3>
             {% for review in reviews %}
-            <div class="review">
+            <div class="review"><h5>
                 Posted by <b>{{ review.poster }}</b> on {{ review.date_posted }}:<br><br>
                 {{ review.text_review }}<br><br>
                 <b>{{ review.poster }}</b>'s ratings:<br><br>
@@ -274,7 +275,7 @@
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 {% endif %}<br>
-                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Bucks:
                 {% if bucks == 1 %}
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniEmptyShotIcon.png" %}"/>
@@ -337,7 +338,7 @@
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 {% endif %}<br>
-            &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
+            &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;Booze:
             {% if booze == 1 %}
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniEmptyShotIcon.png" %}"/>
@@ -368,7 +369,7 @@
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
                 <img src="{% static "MiniFullShotIcon.png" %}"/>
-                {% endif %}<br>
+                {% endif %}<br></h5>
                 </p>
                 <h4>Overall score by {{ review.poster }}:
                    {% if review.overall == 1 %}
