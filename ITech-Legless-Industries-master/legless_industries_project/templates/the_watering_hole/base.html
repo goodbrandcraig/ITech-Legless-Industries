@@ -18,11 +18,12 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
    <div class="navbar-inner">
        <div class="container">
+
            <a href="/the_watering_hole/"><img class="logo" src="/static/giraffe.png"  height="70px" width="70px"/></a>
            <a class="brand" href="/the_watering_hole/">The Watering Hole</a>
 
            <div class="nav-collapse collapse navbar-responsive-collapse">
-               <ul class="nav pull-middle">
+               <ul class="nav pull-right">
                  {% if user.is_authenticated %}
                     <li display="inline"><a href="/the_watering_hole/add_bar/">Add a New Bar</a></li>
                     <li><a href="/the_watering_hole/logout/">Logout</a><br></li>
