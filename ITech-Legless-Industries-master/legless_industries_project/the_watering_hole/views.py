@@ -18,10 +18,12 @@ def index(request):  # Request the context of the request.
     # Query the database for a list of ALL bars currently stored.
     # Order the bars by name
     # Place the list in our context_dict dictionary which will be passed to the template engine.
-    bar_list = Bar.objects.order_by('name')
+    bar_list = Bar.objects.order_by('overall_rating')
     event_list = Event.objects.order_by('bar')
+
     context_dict = {'Bars': bar_list}
     context_dict['Events'] = event_list
+
 
     # Render the response and send it back!
     return render_to_response('the_watering_hole/index.html', context_dict, context)
@@ -43,15 +45,13 @@ def sorted_index(request, category):
         bar = Bar.objects.get(name=bar)
         matching_bar_objs.append(bar)
 
-
+    matching_bar_objs.sort(key=lambda bar: bar.get_overall(), reverse=True)
 
     template_context = {'matching_bars': matching_bars}
 
     template_context['category'] = category
 
     template_context['matching_bar_objs'] = matching_bar_objs
-
-    print matching_bar_objs
 
     return render_to_response('the_watering_hole/sorted_index.html', template_context, context)
 

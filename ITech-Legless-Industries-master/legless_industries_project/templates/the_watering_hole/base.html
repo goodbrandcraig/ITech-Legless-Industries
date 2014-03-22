@@ -49,7 +49,7 @@
         <div class="span2">
             <div class="well sidebar-nav">
 
-            <font size="6">Bar Features</font><br><br>
+            <font size="4">Browse by Bar Features</font><br><br>
 
             <p class="link"><a href="/the_watering_hole/sorted_index/beer_garden/">Beer Garden</a> <p>
             <p class="link"><a href="/the_watering_hole/sorted_index/big_screen/" >Big Screen</a><p>
@@ -77,9 +77,11 @@
         {% endblock %}
 
         {% for Events in Events %}
+            <div class="review container-fluid">
+            <div>
             <p class="link"><a href="/the_watering_hole/bar_page/{{ Events.bar.get_bar_url }}" >{{ Events.bar.name }}:
-                {{ Events.bar.address }}</a><br>
-            <br> <b>Rating:</b>
+                {{ Events.bar.address }}</a>&NonBreakingSpace;
+
              {% if Events.bar.overall_rating == 1 %}
                     <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
                     {% static "EmptyMugIcon.png" %}"/><img src="{% static "EmptyMugIcon.png" %}"/><img src="
@@ -100,10 +102,18 @@
                     <img src="{% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
                     {% static "FullMugIcon.png" %}"/><img src="{% static "FullMugIcon.png" %}"/><img src="
                     {% static "FullMugIcon.png" %}"/>
-                {% endif %}<br>
+                {% endif %}
+                </p>
+            </div>
+            <span class="span5" float="middle">
             <h4>News</h4>{{ Events.news }}<br>
+            </span>
+            <span class="span5">
             <h4>Events</h4>
-            {{ Events.events }}<br><br><br>
+            {{ Events.events }}
+            </span>
+
+            </div>
         {% endfor %}
         </div>
         <!-- /span -->

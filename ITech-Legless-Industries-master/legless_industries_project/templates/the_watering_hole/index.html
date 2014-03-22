@@ -4,20 +4,8 @@
 {% block body_block %}
 <div class="hero-unit">
 
-<h1>The Watering Hole</h1>
-    <p><h3>Quenching the thirst of the Urban Savannah</h3></p>
-
-    {% comment %}
-    {% if Bars %}
-            <ul>
-                {% for Bars in Bars %}
-                <li><a href="/the_watering_hole/bar_page/{{ Bars.get_bar_url }}" >{{ Bars.name }}</a></li>
-                {% endfor %}
-            </ul>
-    {% else %}
-            <strong>There are no bars present.</strong>
-    {% endif %}
-    {% endcomment %}
+<h1 align="center">The Watering Hole</h1>
+    <p><h3 align="center">Quenching the thirst of the Urban Savannah</h3></p>
 
 </div>
 {% endblock %}

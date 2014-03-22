@@ -4,17 +4,24 @@
 {% block body_block %}
 <div class="hero-unit">
 
-    <form id="review_form" method="post" action="/the_watering_hole/review_bar/{{ context_dict.bar_name_url_slash }}">
+    <form class ="form-horizontal" id="review_form" method="post" action="/the_watering_hole/review_bar/{{ context_dict.bar_name_url_slash }}">
 
  {% csrf_token %}
       <h2>Your Review of {{ context_dict.bar_name }}</h2>
         <h4>Add ratings for each aspect, 5 being the highest and 1 being the lowest</h4>
         <h5>Then we'll calculate your overall rating!</h5>
-       {{ review_form }}
-
+        <fieldset>
+        {% for field in review_form %}
+            <fieldset class="control-group">
+                <label class="control-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                <div class="controls">
+                    {{ field }}
+                     <p class="help-text">{{ field.help_text }} </p>
+    </div>
+        {% endfor %}
         <br>
      <button class="btn btn-primary" type="submit">Submit Review</button>
-
+</fieldset>
 </form>
 
 </div>

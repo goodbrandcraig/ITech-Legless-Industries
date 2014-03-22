@@ -23,7 +23,7 @@
 
         </span>
 
-        <span class="span3">
+        <span class="span4">
           <h4>{{ bar.name }}'s ratings from {{ no_of_reviews }} reviews: </h4>
                 <h5>Overall:
                 {% if overall == 1 %}
@@ -187,8 +187,7 @@
 </div>
 
         <h3 style="clear: both;"> What does {{ bar_name }} have to offer?</h3><br>
-       <h4> <marquee behavior="scroll" direction="left" onmouseover="this.stop();"
-                                          onmouseout="this.start();">{{ events.news }}</marquee><br><br>
+       <h4> {{ events.news }}<br><br>
 
     {% if categories.food %}
         <img src="{% static "food.jpg" %}" title="Bar Food"/>
